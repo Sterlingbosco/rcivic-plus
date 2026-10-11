@@ -6,3 +6,4 @@ test-results/
 .env.*
 *.local
 AGENTS.local.md
+.devin/qa/
