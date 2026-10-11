@@ -32,3 +32,7 @@ Lot introductif enrichi : 28 connaissances vérifiées et 12 situations original
 ## Installation sur téléphone et publication
 
 L’installation PWA exige HTTPS et un domaine accessible. En développement local, le téléphone ne peut pas installer l’application depuis `127.0.0.1` ; la prévisualisation reste utilisable via un tunnel de développement. Pour une installation réelle : publier le dossier `dist` sur un hébergement HTTPS statique, ouvrir l’URL avec Chrome/Edge sur Android ou Safari sur iOS, puis « Installer l’application » / « Ajouter à l’écran d’accueil ». Après le premier chargement en ligne, le contenu embarqué fonctionne hors connexion. La progression reste locale à l’appareil ; exporter la sauvegarde avant de changer d’appareil. Une publication publique nécessite la revue éditoriale et l’audit d’accessibilité prévus dans la feuille de route.
+
+### Déploiement GitHub Pages
+
+Le workflow `.github/workflows/deploy.yml` construit l’application (`npm run check`) et publie `dist` sur GitHub Pages à chaque push sur `master`. Le site est servi en HTTPS sous `https://<compte>.github.io/<depot>/` ; la base relative `./` du build rend le sous-chemin compatible avec le manifest et le service worker. Après le premier déploiement, activer Pages sur « GitHub Actions » dans les réglages du dépôt si nécessaire, puis installer depuis le téléphone. Le déploiement public reste soumis aux portes éditoriales ci-dessus.
