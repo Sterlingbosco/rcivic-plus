@@ -1,0 +1,72 @@
+[
+  {
+    "id": "first-step",
+    "name": "Premier pas",
+    "description": "Comprendre votre première micro-leçon.",
+    "icon": "spark",
+    "tone": "blue"
+  },
+  {
+    "id": "regular",
+    "name": "Apprenant régulier",
+    "description": "Répondre à 100 questions distinctes.",
+    "icon": "book",
+    "tone": "violet"
+  },
+  {
+    "id": "week",
+    "name": "Série de 7 jours",
+    "description": "Apprendre pendant 7 jours consécutifs.",
+    "icon": "flame",
+    "tone": "peach"
+  },
+  {
+    "id": "principes_valeurs",
+    "name": "République",
+    "description": "Atteindre 90 % de maîtrise sur le corpus complet du thème.",
+    "icon": "spark",
+    "tone": "blue"
+  },
+  {
+    "id": "institutions",
+    "name": "Institutions",
+    "description": "Atteindre 90 % de maîtrise sur le corpus complet du thème.",
+    "icon": "building",
+    "tone": "violet"
+  },
+  {
+    "id": "droits_devoirs",
+    "name": "Droits",
+    "description": "Atteindre 90 % de maîtrise sur le corpus complet du thème.",
+    "icon": "balance",
+    "tone": "green"
+  },
+  {
+    "id": "histoire_culture",
+    "name": "Mémoire de France",
+    "description": "Atteindre 90 % de maîtrise sur le corpus complet du thème.",
+    "icon": "compass",
+    "tone": "peach"
+  },
+  {
+    "id": "vie_societe",
+    "name": "Vie en société",
+    "description": "Atteindre 90 % de maîtrise sur le corpus complet du thème.",
+    "icon": "heart",
+    "tone": "teal"
+  },
+  {
+    "id": "target-32",
+    "name": "Objectif 32",
+    "description": "Obtenir au moins 32/40 à un examen blanc complet.",
+    "icon": "target",
+    "tone": "green"
+  },
+  {
+    "id": "perfect",
+    "name": "Sans faute",
+    "description": "Obtenir 40/40 à un examen blanc complet.",
+    "icon": "award",
+    "tone": "peach"
+  }
+]

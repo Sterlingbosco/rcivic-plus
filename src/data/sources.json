@@ -1,0 +1,102 @@
+[
+  {
+    "id": "csp-list",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Liste officielle des questions de connaissance — CSP",
+    "url": "https://formation-civique.interieur.gouv.fr/examen-civique/liste-officielle-des-questions-de-connaissance-csp/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "exam-rules",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Informations générales sur l’examen civique",
+    "url": "https://formation-civique.interieur.gouv.fr/examen-civique/informations-g%C3%A9n%C3%A9rales-sur-lexamen-civique/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "anthem",
+    "organization": "Ministère de l’Intérieur",
+    "title": "L’hymne français",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/hymne-francais/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "flag",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Le drapeau français",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/le-drapeau-fran%C3%A7ais/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "motto",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La devise française",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/la-devise-francaise/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "national-day",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La fête nationale",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/la-fete-nationale/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "secularism",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La définition de la laïcité (1/2)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "freedom",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La liberté",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/la-liberte/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "powers",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Présentation des trois pouvoirs (1/2)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "emergency",
+    "organization": "Service Public — DILA",
+    "title": "Quels sont les numéros en cas d’urgence et les numéros d’écoute ?",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F33954",
+    "checkedAt": "2026-10-11",
+    "updatedAt": "2026-08-25",
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  }
+]

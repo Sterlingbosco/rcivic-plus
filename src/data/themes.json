@@ -1,0 +1,52 @@
+[
+  {
+    "id": "principes_valeurs",
+    "name": "La République et ses valeurs",
+    "shortName": "République",
+    "description": "Les symboles qui nous rassemblent et la liberté de conscience.",
+    "icon": "spark",
+    "tone": "blue",
+    "unit": "Des symboles, des valeurs",
+    "duration": 8
+  },
+  {
+    "id": "institutions",
+    "name": "Comprendre les institutions",
+    "shortName": "Institutions",
+    "description": "Qui décide, qui vote et comment s’organise la République ?",
+    "icon": "building",
+    "tone": "violet",
+    "unit": "Le Parlement, simplement",
+    "duration": 3
+  },
+  {
+    "id": "droits_devoirs",
+    "name": "Nos droits et nos devoirs",
+    "shortName": "Droits et devoirs",
+    "description": "Des libertés pour chacun, dans le respect de tous.",
+    "icon": "balance",
+    "tone": "green",
+    "unit": "Des libertés protégées",
+    "duration": 3
+  },
+  {
+    "id": "histoire_culture",
+    "name": "Les repères de notre histoire",
+    "shortName": "Histoire et culture",
+    "description": "Comprendre les événements derrière la fête nationale.",
+    "icon": "compass",
+    "tone": "peach",
+    "unit": "Les origines du 14 juillet",
+    "duration": 3
+  },
+  {
+    "id": "vie_societe",
+    "name": "La vie en société",
+    "shortName": "Vie en société",
+    "description": "Les bons repères pour agir dans la vie quotidienne.",
+    "icon": "heart",
+    "tone": "teal",
+    "unit": "Savoir qui appeler",
+    "duration": 3
+  }
+]
