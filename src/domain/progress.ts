@@ -97,6 +97,7 @@ export function completeSession(
   let updated = progress;
   if (session.mode === 'exam') {
     session.questions.forEach((question, index) => {
+      if (session.answers[index] === null) return;
       updated = recordAnswer(
         updated,
         session.id,

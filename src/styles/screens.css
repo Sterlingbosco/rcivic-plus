@@ -228,6 +228,7 @@
   letter-spacing: -0.015em;
 }
 .theme-card > p {
+  overflow-wrap: anywhere;
   color: var(--muted);
   font-size: 0.75rem;
   margin: 7px 0 22px;

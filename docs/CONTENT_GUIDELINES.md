@@ -20,3 +20,4 @@ Pipeline : extraction intégrale → comparaison → source de réponse → expl
 - Instruction obligatoire (3 à 16 ans) ne signifie pas que toute instruction doit se dérouler à l’école ; instruction en famille soumise à autorisation. Formation obligatoire jusqu’à 18 ans à distinguer.
 - Créer une entreprise pour une personne étrangère dépend notamment du titre et de l’activité ; ne pas convertir « situation régulière » en autorisation générale.
 - Réponses ouvertes « ville française », « écrivain français » et autres exemples ne doivent pas être considérées comme l’unique réponse vraie hors contexte des choix.
+- Une fiche institutionnelle ne valide pas automatiquement tous ses passages : le lot langue ne reprend pas sa chronologie UE/franc, et le lot Première Guerre mondiale ne reprend pas ses raccourcis sur l’URSS. Ces points nécessitent une revue historique spécifique avant réutilisation.

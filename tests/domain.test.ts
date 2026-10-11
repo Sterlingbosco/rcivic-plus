@@ -68,6 +68,18 @@ describe('quiz indépendant de l’UI', () => {
     });
     expect(progress.xp).toBe(0);
   });
+  it('ne transforme pas les questions sans réponse en fausses tentatives d’apprentissage', () => {
+    const exam = startQuiz(selectExamQuestions(questions), 'exam', now);
+    const expired = new Date(now.getTime() + 45 * 60000);
+    const finished = finishQuiz(exam, expired);
+    const progress = completeSession(createProgress(), finished, expired);
+    expect(getResult(finished).score).toBe(0);
+    expect(getResult(finished).unanswered).toBe(40);
+    expect(getResult(finished).answeredErrors).toBe(0);
+    expect(progress.xp).toBe(100);
+    expect(getStatistics(progress, questions).attempts).toBe(0);
+    expect(getStatistics(progress, questions).seen).toBe(0);
+  });
   it('ne permet pas de répondre après l’échéance et compte les questions non répondues', () => {
     const session = startQuiz([question], 'exam', now);
     const expired = new Date(now.getTime() + 45 * 60 * 1000);
@@ -76,8 +88,28 @@ describe('quiz indépendant de l’UI', () => {
     expect(result.score).toBe(0);
     expect(result.total).toBe(1);
   });
+  it('applique exactement le seuil 32/40 et recommande les thèmes fragiles', () => {
+    const session = completed('exam', 40);
+    const withScore = (score: number) => ({
+      ...session,
+      answers: session.questions.map((entry, index) =>
+        index < score ? entry.correctAnswer : (entry.correctAnswer + 1) % 4,
+      ),
+    });
+    expect(getResult(withScore(31)).passed).toBe(false);
+    expect(getResult(withScore(32)).passed).toBe(true);
+    expect(getResult(withScore(31)).recommendations[0]?.theme).toBe(question.theme);
+    expect(getResult(withScore(40)).recommendations).toHaveLength(0);
+  });
   it('refuse un examen blanc avec un corpus insuffisant', () => {
-    expect(() => selectExamQuestions(questions)).toThrow(/corpus/i);
+    expect(() => selectExamQuestions(questions.slice(0, 14))).toThrow(/corpus/i);
+  });
+  it('compose un examen avec le corpus publié, sans questions synthétiques ni doublons', () => {
+    const selected = selectExamQuestions(questions);
+    expect(selected).toHaveLength(40);
+    expect(new Set(selected.map((entry) => entry.id)).size).toBe(40);
+    expect(selected.filter((entry) => entry.type === 'QUESTION_OFFICIELLE')).toHaveLength(28);
+    expect(selected.filter((entry) => entry.type === 'EXERCICE_ENTRAINEMENT')).toHaveLength(12);
   });
   it('sélectionne exactement 28 connaissances et 12 situations distinctes sur cinq thèmes', () => {
     const themes = [

@@ -19,7 +19,7 @@ export function Progression() {
         {[
           { label: 'XP cumulés', value: progress.xp },
           {
-            label: 'Questions de connaissance vues',
+            label: 'Questions de connaissance pratiquées',
             value: `${stats.seen}/${officialQuestions.length}`,
           },
           {

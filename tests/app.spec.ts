@@ -1,5 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
-import { questions } from '../src/data/content';
+import { questions, questionsForTheme } from '../src/data/content';
 import { createProgress } from '../src/domain/progress';
 import { startQuiz } from '../src/domain/quiz';
 import type { Progress } from '../src/domain/schema';
@@ -66,24 +66,27 @@ test('parcours complet : accueil, thème, apprentissage, erreur, XP, résultat e
   page.on('console', (message) => {
     if (message.type() === 'error') errors.push(message.text());
   });
+  const count = questionsForTheme('principes_valeurs').length;
+  const lessonXp = count * 30;
+  const trainingXp = lessonXp + (count - 1) * 10;
   await page.setViewportSize({ width: 390, height: 844 });
   await welcome(page);
   await page.locator('a[href="#/theme/principes_valeurs"]').first().click();
   await page.getByRole('button', { name: 'Apprendre cette unité' }).click();
-  for (let index = 0; index < 6; index++) {
+  for (let index = 0; index < count; index++) {
     await expect(page.getByRole('button', { name: 'J’ai compris', exact: true })).toBeEnabled();
     await page.getByRole('button', { name: 'J’ai compris', exact: true }).click();
     await expect(page.getByRole('button', { name: 'J’ai compris', exact: true })).toHaveCount(
-      index === 5 ? 0 : 1,
+      index === count - 1 ? 0 : 1,
     );
   }
   await expect(page.getByRole('heading', { name: 'Place à la pratique.' })).toBeVisible();
-  expect((await storedProgress(page)).xp).toBe(180);
+  expect((await storedProgress(page)).xp).toBe(lessonXp);
   await page.getByRole('button', { name: 'Commencer le quiz' }).click();
   const sessionId = (await storedProgress(page)).activeSession!.id;
   await expect(page.getByRole('button', { name: 'Valider ma réponse' })).toBeDisabled();
   const wrongQuestion = (await storedProgress(page)).activeSession!.questions[0]!.id;
-  for (let index = 0; index < 6; index++) {
+  for (let index = 0; index < count; index++) {
     await answerCurrent(page, index !== 0);
     await expect(
       page.getByRole('heading', {
@@ -94,7 +97,7 @@ test('parcours complet : accueil, thème, apprentissage, erreur, XP, résultat e
     await expect(page.locator('#answer-feedback')).toBeFocused();
     if (index === 0) {
       const saved = await storedProgress(page);
-      expect(saved.xp).toBe(180);
+      expect(saved.xp).toBe(lessonXp);
       expect(saved.questionStats[wrongQuestion]?.incorrect).toBe(1);
       await page.reload();
       await expect(
@@ -103,26 +106,28 @@ test('parcours complet : accueil, thème, apprentissage, erreur, XP, résultat e
       expect((await storedProgress(page)).activeSession!.id).toBe(sessionId);
     }
     await page
-      .getByRole('button', { name: index === 5 ? 'Voir mon résultat' : 'Question suivante' })
+      .getByRole('button', {
+        name: index === count - 1 ? 'Voir mon résultat' : 'Question suivante',
+      })
       .click();
   }
-  await expect(page.locator('.result-score')).toContainText('5');
+  await expect(page.locator('.result-score')).toHaveText(`${count - 1} / ${count}`);
   const result = await storedProgress(page);
-  expect(result.xp).toBe(230);
+  expect(result.xp).toBe(trainingXp);
   expect(result.history).toHaveLength(1);
   await page.getByRole('link', { name: 'Revoir mes erreurs', exact: true }).click();
   await page.getByRole('button', { name: 'Commencer la révision' }).click();
   expect((await storedProgress(page)).activeSession!.questions[0]?.id).toBe(wrongQuestion);
   await answerCurrent(page, true);
   await page.getByRole('button', { name: 'Voir mon résultat' }).click();
-  expect((await storedProgress(page)).xp).toBe(255);
+  expect((await storedProgress(page)).xp).toBe(trainingXp + 25);
   await page.goto('/#/progression');
   await expect(page.getByRole('heading', { name: 'Premier pas', exact: true })).toBeVisible();
   await page.goto('/#/examen');
+  await expect(page.getByRole('button', { name: 'Démarrer mon examen blanc' })).toBeEnabled();
   await expect(
-    page.getByText('Le véritable examen blanc n’est pas encore disponible.'),
+    page.getByText('Un examen blanc d’entraînement, sur un corpus encore limité.'),
   ).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Démarrer mon examen blanc' })).toHaveCount(0);
   expect(errors).toEqual([]);
 });
 
@@ -185,6 +190,82 @@ test('clavier, radios et réduction des animations', async ({ page }) => {
   expect(transition).toBe('0s');
 });
 
+test('le corpus enrichi conserve une progression et une session de l’ancien lot', async ({
+  page,
+}) => {
+  await welcome(page);
+  const previous = {
+    ...createProgress(),
+    xp: 420,
+    understood: questions.slice(0, 14).map((question) => question.id),
+    preferences: { ...createProgress().preferences, onboarded: true },
+    activeSession: startQuiz(questions.slice(0, 6), 'training'),
+  };
+  await seed(page, previous);
+  await page.goto('/#/accueil');
+  await expect(page.locator('.theme-card').first()).toContainText('6/8 notions comprises');
+  expect((await storedProgress(page)).xp).toBe(420);
+  await page.getByRole('button', { name: 'Reprendre ma session' }).click();
+  await expect(page.getByText('QUESTION 1 / 6', { exact: true })).toBeVisible();
+  expect((await storedProgress(page)).activeSession!.id).toBe(previous.activeSession.id);
+});
+
+test('examen public : 28 connaissances, 12 exercices, reprise, score 32/40 et corrections finales', async ({
+  page,
+}) => {
+  const errors: string[] = [];
+  page.on('pageerror', (error) => errors.push(error.message));
+  await page.setViewportSize({ width: 320, height: 900 });
+  await welcome(page);
+  await page.goto('/#/examen');
+  await page.getByRole('button', { name: 'Démarrer mon examen blanc' }).click();
+  await expect(page.getByText('QUESTION 1 / 40', { exact: true })).toBeVisible();
+  const initial = (await storedProgress(page)).activeSession!;
+  expect(initial.questions).toHaveLength(40);
+  expect(new Set(initial.questions.map((question) => question.id)).size).toBe(40);
+  expect(
+    initial.questions.filter((question) => question.type === 'QUESTION_OFFICIELLE'),
+  ).toHaveLength(28);
+  expect(
+    initial.questions.filter((question) => question.type === 'EXERCICE_ENTRAINEMENT'),
+  ).toHaveLength(12);
+  expect(Date.parse(initial.deadline!) - Date.parse(initial.startedAt)).toBe(45 * 60000);
+  for (let index = 0; index < 40; index++) {
+    expect(
+      await page.evaluate(() => document.documentElement.scrollWidth),
+      `question ${index + 1}`,
+    ).toBeLessThanOrEqual(320);
+    await answerCurrent(page, index < 32);
+    if (index < 39) {
+      await expect(page.getByText(`QUESTION ${index + 2} / 40`, { exact: true })).toBeVisible();
+      await expect(page.locator('#answer-feedback')).toHaveCount(0);
+      const saved = await storedProgress(page);
+      expect(saved.xp).toBe(0);
+      expect(Object.keys(saved.questionStats)).toHaveLength(0);
+      if (index === 11) {
+        await page.reload();
+        await expect(page.getByText('QUESTION 13 / 40', { exact: true })).toBeVisible();
+        expect((await storedProgress(page)).activeSession!.deadline).toBe(initial.deadline);
+      }
+    }
+  }
+  await expect(page.locator('.result-score')).toHaveText('32 / 40');
+  await expect(page.getByText('Objectif pédagogique 32/40 atteint', { exact: true })).toBeVisible();
+  const result = await storedProgress(page);
+  expect(result.xp).toBe(100);
+  expect(result.history[0]?.score).toBe(32);
+  expect(result.earnedBadges).toContain('target-32');
+  expect(Object.keys(result.questionStats)).toHaveLength(40);
+  await page.getByText('Comprendre mes 8 réponses à consolider', { exact: true }).click();
+  await expect(page.locator('details .review-item')).toHaveCount(8);
+  expect(
+    await page.evaluate(() => document.documentElement.scrollWidth),
+    'résultat détaillé',
+  ).toBeLessThanOrEqual(320);
+  expect(await page.getByRole('link', { name: /^Reprendre :/ }).count()).toBeGreaterThan(0);
+  expect(errors).toEqual([]);
+});
+
 test('examen synthétique complet : 40 réponses, aucun feedback ou XP avant la fin', async ({
   page,
 }) => {
@@ -222,6 +303,10 @@ test('échéance d’examen persistée et sauvegarde corrompue conservée', asyn
   await seed(page, { ...progress, activeSession: session });
   await page.goto('/#/quiz');
   await expect(page.locator('.result-score')).toHaveText('0 / 1');
+  await expect(
+    page.getByRole('link', { name: 'Apprendre les notions non répondues' }),
+  ).toBeVisible();
+  expect(Object.keys((await storedProgress(page)).questionStats)).toHaveLength(0);
   await seed(page, { ...progress, xp: -1 });
   await expect(
     page.getByText('La sauvegarde ne peut pas être lue.', { exact: false }),

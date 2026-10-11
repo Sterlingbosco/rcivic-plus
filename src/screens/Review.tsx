@@ -61,7 +61,7 @@ export function Review({
         </h2>
         <p>
           {training
-            ? 'Deux exercices originaux, un retour pédagogique après chaque réponse.'
+            ? `${situations.length} exercices originaux, un retour pédagogique après chaque réponse.`
             : `${stats.errors.length} notion(s) à reprendre · ${due} révision(s) à échéance. Les nouvelles notions complètent la session si nécessaire.`}
         </p>
         {pool.length > 0 ? (

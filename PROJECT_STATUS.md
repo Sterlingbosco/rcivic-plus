@@ -1,21 +1,21 @@
 # État produit RCIVIC+
 
-Validation du lot introductif CSP : 11 octobre 2026. Les cases ci-dessous portent sur cette première tranche exploitable, pas sur l’achèvement du cahier des charges complet.
+Validation du lot introductif enrichi CSP (RCIVIC+ 0.2.0) : 11 octobre 2026. Les cases ci-dessous portent sur cette première tranche exploitable, pas sur l’achèvement du cahier des charges complet.
 
 - [x] environnement — Node 20.11 / npm 10.2 / Git audités ; références intégralement lues ; installation reproductible `npm ci` vérifiée
 - [x] architecture — React / TypeScript strict / Vite ; séparation données, moteurs, plateforme et UI
 - [x] design system — tokens, composants, feedbacks, graphismes originaux et rendu mobile/desktop examinés
-- [x] données — 14 énoncés officiels vérifiés + 2 exercices originaux publiés ; schémas et sources validés ; 191 énoncés + 189 réponses client intégralement préservés hors bundle
+- [x] données — 28 énoncés officiels vérifiés + 12 exercices originaux publiés ; schémas et sources validés ; 191 énoncés + 189 réponses client intégralement préservés hors bundle
 - [x] moteur quiz — sélection sans doublons, choix mélangés, validation, correction, score et reprise
-- [x] apprentissage — cinq unités introductives, 14 micro-leçons, explications, notions clés, sources et audio navigateur
+- [x] apprentissage — cinq unités introductives, 28 micro-leçons, explications, notions clés, sources et audio navigateur
 - [x] révision — erreurs persistées et sélection priorisée ; écran des erreurs et révision intelligente
 - [x] répétition espacée — intervalles configurables 1/3/7/14/30 jours, reset après erreur et tests
 - [x] gamification — XP idempotents, niveaux d’expérience, séries et dix badges présentés ; badges acquis conservés
-- [ ] examen blanc — moteur et UI vérifiés avec un corpus synthétique de 40 questions ; activation publique bloquée jusqu’à 28 connaissances et 12 scénarios distincts vérifiés sur les cinq thèmes
+- [x] examen blanc — 40 questions distinctes du corpus publié (28 connaissances + 12 exercices), 45 minutes, seuil 32/40 ; sans feedback/XP avant la fin ; reprise, résultats par thème, recommandations et corrections finales vérifiés sur mobile
 - [x] statistiques — couverture du lot, précision, tentatives, thèmes, historique et agrégats d’examens
 - [x] PWA — manifest, icônes PNG 192/512, service worker versionné ; rechargement, apprentissage et sauvegarde hors connexion testés après premier chargement
 - [x] accessibilité — contrôles initiaux clavier, focus, radios, cibles tactiles, contrastes des contrôles, animations réduites et texte à 200 % ; conformité WCAG complète non certifiée
-- [x] tests — 18 tests unitaires/de données et 12 tests Chromium passent ; lint, types, format, corpus, build et npm audit validés
+- [x] tests — 21 tests unitaires/de données et 14 tests Chromium passent ; lint, types, format, corpus, build et npm audit validés
 - [x] documentation — règles et sept contrats produit dans docs, registre des sources et audit brut
 - [x] audit final — lot introductif vérifié, prévisualisation HTTP 200, aucune erreur console/réseau dans le contrôle navigateur, limites explicites
 
@@ -23,14 +23,14 @@ Validation du lot introductif CSP : 11 octobre 2026. Les cases ci-dessous porten
 
 `npm.cmd ci`, `npm.cmd run check`, `npm.cmd run test:e2e`, `npm.cmd audit`.
 
-Build : JavaScript 318,78 kB brut / 93,17 kB gzip ; CSS 28,25 kB brut / 6,59 kB gzip. Corpus brut client/officiel non distribué au navigateur. Les tailles sont celles du lot introductif, pas un benchmark smartphone.
+Build : JavaScript environ 344 kB brut / 99 kB gzip ; CSS environ 29 kB brut / 7 kB gzip. Corpus brut client/officiel non distribué au navigateur. Les tailles sont celles du lot introductif, pas un benchmark smartphone.
 
 ## Limites avant publication générale
 
-- Les 177 autres énoncés officiels extraits n’ont pas encore de QCM publié avec réponse individuellement vérifiée.
+- Les 163 autres énoncés officiels extraits n’ont pas encore de QCM publié avec réponse individuellement vérifiée.
 - Revue éditoriale humaine non attestée ; les explications et choix ne sont pas un corrigé officiel.
-- Examen blanc public indisponible ; ne jamais le compléter avec des doublons ou des situations prétendument officielles.
+- L’examen blanc est une simulation sur un corpus encore limité ; les mêmes 40 notions sont réutilisées à chaque examen avec mélange. Un score élevé ne mesure pas la préparation sur les 191 énoncés, et les situations ne sont pas officielles.
 - Audit lecteur d’écran humain, téléphones réels et installation iOS/Android restent nécessaires. La présence d’un manifest n’atteste pas tous ces contrôles.
 - Progression locale, sans compte, synchronisation ou import de sauvegarde ; export JSON disponible. Utiliser un seul onglet pour étudier : les modifications concurrentes entre onglets ne sont pas encore synchronisées.
 - Node 20.11 et ESLint 9 sont un compromis de compatibilité du poste existant ; actualiser le runtime vers une LTS maintenue et les branches majeures des outils avant une maintenance longue durée. npm audit ne remplace pas le suivi de support.
-- Aucun commit ni push effectué. Documents originaux conservés.
+- Commits atomiques créés localement, sans push. Documents originaux conservés.

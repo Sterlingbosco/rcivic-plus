@@ -1,6 +1,7 @@
-import { sources, officialQuestions, situations } from '../data/content';
+import { sources, officialQuestions, situations, officialCorpusTotal } from '../data/content';
 import { PageHeading } from '../components/Primitives';
 import { Icon } from '../components/Icon';
+import metadata from '../../package.json' with { type: 'json' };
 
 export function Sources() {
   return (
@@ -16,7 +17,8 @@ export function Sources() {
           <h2>L’énoncé publié</h2>
           <p>
             Repris de la liste ministérielle CSP. {officialQuestions.length} énoncés sont intégrés
-            dans ce premier lot, sur 191 énoncés extraits de la publication consultée.
+            dans ce premier lot, sur {officialCorpusTotal} énoncés extraits de la publication
+            consultée.
           </p>
         </article>
         <article className="card">
@@ -81,9 +83,9 @@ export function Sources() {
         </p>
         <h2>À propos de cette version</h2>
         <p>
-          RCIVIC+ 0.1.0 · parcours introductif CSP. Les graphismes sont originaux et les énoncés
-          sont attribués au ministère de l’Intérieur. Les références client sont préservées ; aucune
-          réponse non vérifiée n’est présentée comme officielle.
+          RCIVIC+ {metadata.version} · parcours introductif CSP. Les graphismes sont originaux et
+          les énoncés sont attribués au ministère de l’Intérieur. Les références client sont
+          préservées ; aucune réponse non vérifiée n’est présentée comme officielle.
         </p>
       </section>
     </>

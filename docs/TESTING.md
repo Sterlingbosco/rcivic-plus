@@ -35,8 +35,8 @@ Contrôles exécutés le 11 octobre 2026 :
 | ----------------------------------------------------------------------- | ------------------------------------------------------------- |
 | Réinstallation depuis le lockfile, après arrêt des serveurs Vite        | `npm ci` réussi                                               |
 | Validation des données, types, lint sans avertissement, format et build | `npm run check` réussi                                        |
-| Tests unitaires et données                                              | 18 tests réussis                                              |
-| Parcours, persistance, responsive, clavier, examen synthétique et PWA   | 12 tests Chromium réussis                                     |
+| Tests unitaires et données                                              | 21 tests réussis                                              |
+| Parcours, persistance, responsive, clavier, examen synthétique et PWA   | 14 tests Chromium réussis                                     |
 | Largeurs testées                                                        | 320, 390, 768, 1440 px                                        |
 | Texte agrandi et reflow                                                 | 200 % sur les principaux écrans                               |
 | Contrastes des contrôles principaux et étiquettes                       | ratio >=4,5:1                                                 |
@@ -47,4 +47,6 @@ Contrôles exécutés le 11 octobre 2026 :
 
 Captures d’inspection indépendantes générées dans `.devin/qa` par `tests/browser-qa.mjs`. Les captures automatiques E2E restent dans `test-results`, ignoré par Git. Sur cet environnement, le lecteur peut refuser les fichiers ignorés même après autorisation de lecture ; ne pas modifier les exclusions pour contourner ce comportement.
 
-Les tests d’examen utilisent exclusivement des données synthétiques isolées dans le navigateur de test. Ils ne rendent pas le corpus publié suffisant pour activer l’examen blanc public.
+Le test d’examen public utilise les 40 questions réellement publiées, sans seed synthétique : 28 connaissances et 12 exercices, absence d’XP/statistiques/correction pendant l’examen, reprise conservant l’échéance, score 32/40, 100 XP à la fin, badge, recommandations et huit corrections détaillées. Chaque écran de question et le résultat détaillé sont vérifiés à 320 px.
+
+Les tests synthétiques restent séparés pour les seuils, l’échéance et les cas limites. Un test supplémentaire conserve 420 XP, les 14 leçons de l’ancien lot et une ancienne session de six questions après enrichissement du corpus. Le lot publié reste incomplet même si le format d’examen est désormais fonctionnel.

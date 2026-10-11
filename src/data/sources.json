@@ -98,5 +98,65 @@
     "updatedAt": "2026-08-25",
     "license": "Référence factuelle ; aucun visuel repris",
     "type": "institutional"
+  },
+  {
+    "id": "marianne",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Marianne",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/marianne/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "language",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La langue française",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/la-langue-de-la-republique/la-langue-fran%C3%A7aise/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "great-war",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La Première Guerre mondiale (1914-1918) : le contexte",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-premiere-guerre-mondiale-1/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "public-holidays",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Patrimoine français : les jours fériés",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/patrimoine-francais-les-jours-feries/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "care-doctor",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Accès aux soins : le médecin généraliste",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/sante/acces-aux-soins-le-medecin-generaliste/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "care-refund",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Santé : la prise en charge et le remboursement",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/sante/sante-la-prise-en-charge-les-demarches-pour-etre-rembourse/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
   }
 ]

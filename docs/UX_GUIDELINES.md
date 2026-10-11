@@ -12,7 +12,7 @@ Couleurs : ink #172554, blue #2457d6, background #f7f8fc, surface #ffffff, text 
 
 Accueil : objectif, couverture réelle du lot, précision, XP, niveau d’apprentissage (pas prédiction d’examen), série, activité et action Continuer. Thèmes : cinq thèmes et nombre de notions disponibles. Leçon : une connaissance, réponse, explication, notion clé, attribution ; « J’ai compris » avance et récompense une seule fois. Quiz : radios natifs, validation explicite, correction séparée, source. Résultat : score de la session, XP gagnés, erreurs et prochaine action. Révision : priorité aux erreurs et échéances. Paramètres : objectif, audio, export local. Sources/À propos : indépendance, périmètre et attribution.
 
-L’examen affiche les règles officielles mais explique son indisponibilité tant que le corpus requis n’est pas vérifié. Aucun bouton simulant une fonctionnalité inexistante.
+L’examen est accessible avec 28 connaissances et 12 exercices distincts vérifiés. L’introduction explique les règles, le corpus limité et le caractère original des situations. Pendant l’examen : navigation séquentielle, timer, aucun feedback ni XP par réponse ; le retour à l’accueil ne met pas le temps en pause. À la fin : score /40, seuil 32, résultats par thème, recommandations et corrections détaillées avec sources. Aucun bouton simulant une fonctionnalité inexistante.
 
 ## Accessibilité
 

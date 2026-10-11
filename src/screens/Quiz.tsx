@@ -96,7 +96,7 @@ export function Quiz() {
       <div className="quiz-top">
         <a className="back-link" href="#/accueil">
           <Icon name="back" size={18} />
-          Pause et accueil
+          {isExam ? 'Accueil · le temps continue' : 'Pause et accueil'}
         </a>
         <span className="tag">
           {isExam

@@ -47,6 +47,10 @@ export const officialThemeTotals: Record<ThemeId, number> = {
   histoire_culture: 47,
   vie_societe: 31,
 };
+export const officialCorpusTotal = Object.values(officialThemeTotals).reduce(
+  (sum, total) => sum + total,
+  0,
+);
 export function getSource(id: string) {
   const source = sources.find((entry) => entry.id === id);
   if (!source) throw new Error(`Source inconnue : ${id}`);

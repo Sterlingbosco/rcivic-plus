@@ -16,11 +16,11 @@ XP, leçons comprises (IDs), événements récompensés (IDs), dates locales d�
 
 ## Session
 
-ID, mode training/review/exam, questions et choix mélangés, curseur, réponses nullables, startedAt, deadline pour examen, finishedAt. Aucun doublon, réponse unique et immuable après validation. Une session reprise conserve l’ordre et les réponses. `getResult` n’est disponible qu’après fin.
+ID, mode training/review/exam, questions et choix mélangés, curseur, réponses nullables, startedAt, deadline pour examen, finishedAt. Aucun doublon, réponse unique et immuable après validation. Une session reprise conserve l’ordre et les réponses. `getResult` n’est disponible qu’après fin. Il expose score, pourcentage, seuil pédagogique, erreurs, résultats par thème et recommandations triées selon les thèmes sous 80 % de réponses correctes dans cette session. En examen, les tentatives et les 100 XP de complétion sont enregistrés seulement à la fin ; l’échéance de 45 minutes reste identique après rechargement. Les questions sans réponse valent zéro dans le score mais ne créent pas de tentatives ni d’erreurs d’apprentissage fictives ; `unanswered` et `answeredErrors` distinguent ces deux cas dans le résultat.
 
 ## Audit
 
-Copie textuelle du DOCX intégral, empreinte SHA-256, 189 réponses réparties selon les cinq rubriques, 191 énoncés téléchargés avec URL/date. Aucun alignement automatique aveugle : une omission décale les positions suivantes. Les éléments non publiés restent à vérifier.
+Copie textuelle du DOCX intégral, empreinte SHA-256, 189 réponses réparties selon les cinq rubriques, 191 énoncés téléchargés avec URL/date. Aucun alignement automatique aveugle : une omission décale les positions suivantes. Le fichier d’audit brut reste une archive immuable. Le statut courant du contenu intégré est porté par `src/data/questions.json` ; les 163 énoncés non publiés restent à vérifier. L’enrichissement conserve les IDs, le schéma de progression version 1 et les sessions déjà sauvegardées.
 
 ## Validation
 

@@ -7,7 +7,7 @@
     "icon": "spark",
     "tone": "blue",
     "unit": "Des symboles, des valeurs",
-    "duration": 8
+    "duration": 10
   },
   {
     "id": "institutions",
@@ -16,8 +16,8 @@
     "description": "Qui décide, qui vote et comment s’organise la République ?",
     "icon": "building",
     "tone": "violet",
-    "unit": "Le Parlement, simplement",
-    "duration": 3
+    "unit": "Les trois pouvoirs, simplement",
+    "duration": 8
   },
   {
     "id": "droits_devoirs",
@@ -27,17 +27,17 @@
     "icon": "balance",
     "tone": "green",
     "unit": "Des libertés protégées",
-    "duration": 3
+    "duration": 5
   },
   {
     "id": "histoire_culture",
     "name": "Les repères de notre histoire",
     "shortName": "Histoire et culture",
-    "description": "Comprendre les événements derrière la fête nationale.",
+    "description": "Relier la Révolution française et les commémorations à notre histoire.",
     "icon": "compass",
     "tone": "peach",
-    "unit": "Les origines du 14 juillet",
-    "duration": 3
+    "unit": "Révolution et mémoire collective",
+    "duration": 6
   },
   {
     "id": "vie_societe",
@@ -46,7 +46,7 @@
     "description": "Les bons repères pour agir dans la vie quotidienne.",
     "icon": "heart",
     "tone": "teal",
-    "unit": "Savoir qui appeler",
-    "duration": 3
+    "unit": "Se soigner et savoir qui appeler",
+    "duration": 6
   }
 ]

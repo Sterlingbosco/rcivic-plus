@@ -103,13 +103,20 @@ export function getResult(session: QuizSession) {
     byTheme[question.theme].correct += Number(correct);
   });
   const total = session.questions.length;
+  const unanswered = session.answers.filter((answer) => answer === null).length;
   return {
     score,
     total,
+    unanswered,
+    answeredErrors: total - score - unanswered,
     percent: Math.round((score / total) * 100),
     passed: session.mode === 'exam' && total === EXAM_RULES.questions && score >= EXAM_RULES.target,
     byTheme,
     errors,
+    recommendations: themeSchema.options
+      .map((theme) => ({ theme, ...byTheme[theme] }))
+      .filter((entry) => entry.total > 0 && entry.correct / entry.total < 0.8)
+      .sort((a, b) => a.correct / a.total - b.correct / b.total),
   };
 }
 

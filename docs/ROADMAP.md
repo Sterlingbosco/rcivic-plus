@@ -12,6 +12,8 @@ Accueil, cinq thèmes, micro-leçons, QCM avec correction, résultat, XP idempot
 
 28 connaissances et 12 situations originales distinctes au minimum, couvrant les cinq thèmes ; 40 questions, 45 minutes, résultat final /40, seuil pédagogique 32, analyse par thème. Porte : aucun feedback/XP par réponse, reprise et échéance testées, absence de doublons, indication de simulation et de situations non officielles.
 
+Ce jalon technique est atteint dans RCIVIC+ 0.2.0 avec un corpus minimal de 28 connaissances et 12 exercices. L’extension aux 163 énoncés restants, la diversité des tirages et la revue humaine restent des portes séparées avant publication générale.
+
 ## Qualification avant publication large
 
 Revue du corpus par une personne compétente, audit lecteur d’écran et WCAG 2.2 AA, tests sur téléphones réels, installation iOS/Android, migration des sauvegardes et mises à jour hors ligne. Node doit être actualisé vers une version LTS maintenue avant la migration des outils vers leurs branches majeures récentes.

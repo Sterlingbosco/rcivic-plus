@@ -18,9 +18,13 @@ DOCX lu intégralement, original inchangé et empreinte conservée. 189 réponse
 
 Les réponses du lot publié ont été rapprochées des fiches ministérielles (hymne, drapeau, devise, fête nationale, liberté de conscience, liberté et séparation des pouvoirs) et de Service Public pour 15/18. La fête nationale cite aussi 1790, absent du résumé client. Aucune réponse non revue du reste du corpus n’est publiée.
 
+Le lot intégré contient désormais 28 énoncés officiels (8 principes, 6 institutions, 4 droits, 5 histoire/culture, 5 société) et 12 exercices originaux. Les ajouts ont été rapprochés des réponses client et vérifiés dans les fiches ministérielles Marianne, langue française, trois pouvoirs, liberté, Première Guerre mondiale, jours fériés, médecin généraliste et remboursement des soins. Les URL de ces fiches figurent dans le registre JSON. Les 163 autres énoncés restent hors du corpus publié.
+
+Le nombre de situations est celui des exercices créés par RCIVIC+, pas celui de situations officielles récupérées. La composition de l’examen blanc est une simulation sur ce lot limité, sans garantie de représentativité de la banque complète.
+
 ## Indisponibilité
 
-L’arrêté lié par le ministère, https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052381620, renvoie HTTP 403 au lecteur utilisé. Il n’est pas prétendu lu ni utilisé comme preuve complémentaire. Les règles ci-dessus ont été vérifiées dans la page ministérielle accessible.
+L’arrêté lié par le ministère, https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052381620, renvoie HTTP 403 au lecteur utilisé. Il n’est pas prétendu lu ni utilisé comme preuve complémentaire. Les règles ci-dessus ont été vérifiées dans la page ministérielle accessible. La page Vie publique sur le 11 novembre a demandé JavaScript/cookies, et celle d’Éduscol a renvoyé HTTP 403 ; elles ne sont pas utilisées comme preuve pour le lot ajouté. L’armistice et les dates de la Première Guerre mondiale ont été vérifiés dans les fiches accessibles du ministère de l’Intérieur.
 
 ## Statut éditorial
 

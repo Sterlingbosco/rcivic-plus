@@ -2,7 +2,7 @@ import { useApp } from '../app-context';
 import { getResult } from '../domain/quiz';
 import { themes } from '../data/content';
 import { Icon } from '../components/Icon';
-import { PageHeading } from '../components/Primitives';
+import { PageHeading, SourceLink } from '../components/Primitives';
 
 export function Result() {
   const { progress } = useApp();
@@ -40,6 +40,13 @@ export function Result() {
           <span> / {result.total}</span>
         </div>
         <p>{result.percent} % de réponses correctes</p>
+        {result.unanswered > 0 && (
+          <p>
+            {result.unanswered} question(s) sans réponse : elles valent zéro dans ce score, sans
+            ajouter de fausses tentatives à votre progression. Reprenez les notions recommandées
+            ci-dessous.
+          </p>
+        )}
         {session.mode === 'exam' && result.total === 40 && (
           <strong>
             {result.passed
@@ -60,9 +67,13 @@ export function Result() {
         <div className="button-row">
           <a
             className="button button-primary"
-            href={result.errors.length ? '#/erreurs' : '#/themes'}
+            href={result.answeredErrors ? '#/erreurs' : '#/themes'}
           >
-            {result.errors.length ? 'Revoir mes erreurs' : 'Découvrir un autre thème'}
+            {result.answeredErrors
+              ? 'Revoir mes erreurs'
+              : result.unanswered
+                ? 'Apprendre les notions non répondues'
+                : 'Découvrir un autre thème'}
             <Icon name="arrow" size={18} />
           </a>
           <a className="button button-secondary" href="#/accueil">
@@ -88,6 +99,60 @@ export function Result() {
             ))}
         </div>
       </section>
+      {result.recommendations.length > 0 && (
+        <section className="card">
+          <h2>Votre prochaine étape</h2>
+          <p className="muted">
+            Reprenez d’abord les thèmes les plus fragiles de cette session. Ce conseil ne mesure pas
+            votre maîtrise du corpus complet.
+          </p>
+          <div className="button-row">
+            {result.recommendations.map((recommendation) => {
+              const theme = themes.find((entry) => entry.id === recommendation.theme)!;
+              return (
+                <a className="button button-secondary" key={theme.id} href={`#/theme/${theme.id}`}>
+                  Reprendre : {theme.shortName}
+                  <Icon name="arrow" size={18} />
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      )}
+      {result.errors.length > 0 && (
+        <details className="card source-details">
+          <summary>Comprendre mes {result.errors.length} réponses à consolider</summary>
+          <div className="review-list">
+            {result.errors.map((question) => {
+              const index = session.questions.findIndex((entry) => entry.id === question.id);
+              const selected = session.answers[index];
+              return (
+                <article className="review-item" key={question.id}>
+                  <div>
+                    <span className="tag">
+                      {question.type === 'QUESTION_OFFICIELLE'
+                        ? 'ÉNONCÉ OFFICIEL · CORRECTION PÉDAGOGIQUE'
+                        : 'EXERCICE D’ENTRAÎNEMENT'}
+                    </span>
+                    <h3>{question.question}</h3>
+                    <p>
+                      Votre réponse :{' '}
+                      {selected === null || selected === undefined
+                        ? 'Sans réponse'
+                        : question.answers[selected]}
+                    </p>
+                    <p>
+                      <strong>À retenir : {question.answers[question.correctAnswer]}</strong>
+                    </p>
+                    <p>{question.explanation}</p>
+                    <SourceLink id={question.answerSourceId} />
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </details>
+      )}
     </>
   );
 }

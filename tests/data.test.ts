@@ -7,7 +7,8 @@ import { createProgress } from '../src/domain/progress';
 it('valide tout le corpus, les IDs et les liens vers les sources', () => {
   expect(() => validateCorpus(questions, sources)).not.toThrow();
   expect(themes).toHaveLength(5);
-  expect(questions.filter((q) => q.type === 'QUESTION_OFFICIELLE')).toHaveLength(14);
+  expect(questions.filter((q) => q.type === 'QUESTION_OFFICIELLE')).toHaveLength(28);
+  expect(questions.filter((q) => q.type === 'EXERCICE_ENTRAINEMENT')).toHaveLength(12);
 });
 
 it('préserve les 191 énoncés officiels et les 189 réponses client', () => {
