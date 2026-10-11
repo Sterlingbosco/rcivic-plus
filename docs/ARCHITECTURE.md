@@ -28,3 +28,7 @@ Le build embarque les données et les ressources. Service worker limité aux res
 ## Limites produit
 
 Lot introductif enrichi : 28 connaissances vérifiées et 12 situations originales. L’examen blanc de 40 questions est activé ; ses sélections doivent toujours respecter 28 connaissances et 12 exercices distincts. Ce corpus minimal reprend les mêmes notions à chaque examen, avec un ordre et des propositions mélangés ; il ne mesure pas la maîtrise des 191 énoncés CSP. Aucun score projeté /40 à partir d’un petit quiz. Pas de synchronisation entre appareils ou entre onglets ouverts simultanément ; utiliser un seul onglet pour étudier dans ce lot introductif. Le navigateur peut effacer ses données locales. Revue éditoriale humaine requise avant diffusion publique large.
+
+## Installation sur téléphone et publication
+
+L’installation PWA exige HTTPS et un domaine accessible. En développement local, le téléphone ne peut pas installer l’application depuis `127.0.0.1` ; la prévisualisation reste utilisable via un tunnel de développement. Pour une installation réelle : publier le dossier `dist` sur un hébergement HTTPS statique, ouvrir l’URL avec Chrome/Edge sur Android ou Safari sur iOS, puis « Installer l’application » / « Ajouter à l’écran d’accueil ». Après le premier chargement en ligne, le contenu embarqué fonctionne hors connexion. La progression reste locale à l’appareil ; exporter la sauvegarde avant de changer d’appareil. Une publication publique nécessite la revue éditoriale et l’audit d’accessibilité prévus dans la feuille de route.

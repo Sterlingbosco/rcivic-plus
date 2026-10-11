@@ -11,6 +11,7 @@ PowerShell Windows : `npm.cmd ci`, `npm.cmd run dev`. Node >=20.11.0 ; npm >=10.
 - `npm test` : Vitest, moteurs et intégration de session.
 - `npm run build` : compilation et ressources PWA.
 - `npm run test:e2e` : Playwright sur le build servi localement ; installer Chromium avec `npx playwright install chromium` si nécessaire.
+- `npm run preview -- --host 0.0.0.0` : servir le build pour un appareil du réseau local ; l’adresse `https://` reste nécessaire pour l’installation PWA sur téléphone.
 - `npm run check` : validation, types, lint, format, tests, build.
 
 ## Couverture attendue
