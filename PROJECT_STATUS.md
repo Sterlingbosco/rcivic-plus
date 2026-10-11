@@ -30,7 +30,7 @@ Build : JavaScript environ 344 kB brut / 99 kB gzip ; CSS environ 29 kB brut / 7
 - Les 163 autres énoncés officiels extraits n’ont pas encore de QCM publié avec réponse individuellement vérifiée.
 - Revue éditoriale humaine non attestée ; les explications et choix ne sont pas un corrigé officiel.
 - L’examen blanc est une simulation sur un corpus encore limité ; les mêmes 40 notions sont réutilisées à chaque examen avec mélange. Un score élevé ne mesure pas la préparation sur les 191 énoncés, et les situations ne sont pas officielles.
-- Audit lecteur d’écran humain, téléphones réels et installation iOS/Android restent nécessaires. La présence d’un manifest n’atteste pas tous ces contrôles. L’installation PWA sur téléphone exige HTTPS et un hébergement accessible ; en local, utiliser un tunnel de développement ou publier `dist` sur un hébergement HTTPS statique.
+- Audit lecteur d’écran humain, téléphones réels et installation iOS/Android restent nécessaires. La présence d’un manifest n’atteste pas tous ces contrôles. Le site est publié sur GitHub Pages (HTTPS) ; l’installation sur téléphone réel reste à vérifier.
 - Progression locale, sans compte, synchronisation ou import de sauvegarde ; export JSON disponible. Utiliser un seul onglet pour étudier : les modifications concurrentes entre onglets ne sont pas encore synchronisées.
 - Node 20.11 et ESLint 9 sont un compromis de compatibilité du poste existant ; actualiser le runtime vers une LTS maintenue et les branches majeures des outils avant une maintenance longue durée. npm audit ne remplace pas le suivi de support.
 - Commits atomiques créés localement, sans push. Documents originaux conservés.
