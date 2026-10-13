@@ -299,7 +299,8 @@ describe('profils d’examen', () => {
       expect(content.all.every((q) => q.level === profile)).toBe(true);
       expect(content.official.some((q) => q.level !== profile)).toBe(false);
     }
-    expect(profileContent('CR').officialTotal).toBe(188);
+    expect(profileContent('CR').officialTotal).toBe(209);
+    expect(profileContent('NAT').officialTotal).toBe(244);
   });
   it('compte les résumés d’examen par profil', () => {
     const pool = questions.filter((q) => q.level === 'CSP').slice(0, 40);

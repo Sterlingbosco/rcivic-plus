@@ -1038,5 +1038,15 @@
     "updatedAt": "2026-04-15",
     "license": "Référence factuelle ; aucun visuel repris",
     "type": "institutional"
+  },
+  {
+    "id": "nat-list",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Examen civique, mention naturalisation : questions de connaissance (PDF, version 20251212)",
+    "url": "https://www.immigration.interieur.gouv.fr/sites/dgef/files/medias/documents/2026-01/examen-civique-naturalisation-questions-de-connaissance-20251212.pdf",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
   }
 ]

@@ -38,8 +38,9 @@ export const badges = z
   .parse(rawBadges);
 /**
  * Nombre d'énoncés des listes officielles du ministère, par profil et par thème.
- * CSP : liste CSP (191, extraite dans data/reference-audit.json). CR : liste CR (188), comptée sur
- * la page officielle le 2026-10-13. NAT : liste officielle pas encore intégrée (0 = inconnu).
+ * CSP : liste CSP (191, extraite dans data/reference-audit.json). CR : liste CR (209), extraite de
+ * la page officielle le 2026-10-13 dans data/reference-audit-cr.json. NAT : liste PDF du ministère (244, dont 1 doublon exact
+ * conservé), extraite dans data/reference-audit-nat.json.
  */
 export const officialThemeTotals: Record<Profile, Record<ThemeId, number>> = {
   CSP: {
@@ -51,17 +52,17 @@ export const officialThemeTotals: Record<Profile, Record<ThemeId, number>> = {
   },
   CR: {
     principes_valeurs: 40,
-    institutions: 42,
-    droits_devoirs: 33,
-    histoire_culture: 39,
-    vie_societe: 34,
+    institutions: 50,
+    droits_devoirs: 38,
+    histoire_culture: 49,
+    vie_societe: 32,
   },
   NAT: {
-    principes_valeurs: 0,
-    institutions: 0,
-    droits_devoirs: 0,
-    histoire_culture: 0,
-    vie_societe: 0,
+    principes_valeurs: 35,
+    institutions: 54,
+    droits_devoirs: 36,
+    histoire_culture: 76,
+    vie_societe: 43,
   },
 };
 export function getSource(id: string) {
