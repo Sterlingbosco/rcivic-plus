@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useApp } from '../app-context';
 import { questionsForTheme, themes } from '../data/content';
+import { correctText } from '../domain/answers';
 import { completeLesson } from '../domain/progress';
 import type { ThemeId } from '../domain/schema';
 import { Icon } from '../components/Icon';
@@ -72,12 +73,12 @@ export function Lesson({ themeId }: { themeId: ThemeId }) {
         <div className="lesson-card-top">
           <span className="tag">ÉNONCÉ OFFICIEL CSP</span>
           <AudioButton
-            text={`${question.question} ${question.answers[question.correctAnswer]} ${question.explanation}`}
+            text={`${question.question} ${correctText(question)} ${question.explanation}`}
           />
         </div>
         <h1 tabIndex={-1}>{question.question}</h1>
         <p className="answer-label">LA RÉPONSE À COMPRENDRE</p>
-        <p className="lesson-answer">{question.answers[question.correctAnswer]}</p>
+        <p className="lesson-answer">{correctText(question)}</p>
         <p className="lesson-explanation">{question.explanation}</p>
         <div className="key-point">
           <Icon name="spark" size={23} />
@@ -93,8 +94,10 @@ export function Lesson({ themeId }: { themeId: ThemeId }) {
             corrigé officiel. Vérification documentaire du 11 octobre 2026 ; revue humaine non
             attestée.
           </p>
-          <SourceLink id={question.sourceId!} />
-          <SourceLink id={question.answerSourceId} />
+          {question.sourceId && <SourceLink id={question.sourceId} />}
+          {[question.answerSourceId, ...(question.extraSourceIds ?? [])].map((id) => (
+            <SourceLink key={id} id={id} />
+          ))}
         </details>
         <div className="lesson-actions">
           <button

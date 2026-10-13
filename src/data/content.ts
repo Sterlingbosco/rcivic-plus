@@ -56,6 +56,12 @@ export function getSource(id: string) {
   if (!source) throw new Error(`Source inconnue : ${id}`);
   return source;
 }
+export const pedagogicalQuestions = questions.filter(
+  (question) => question.type === 'QUESTION_PEDAGOGIQUE',
+);
+/** Énoncés officiels puis reformulations pédagogiques du thème (exclues de l'examen blanc). */
 export function questionsForTheme(id: ThemeId) {
-  return officialQuestions.filter((question) => question.theme === id);
+  return [...officialQuestions, ...pedagogicalQuestions].filter(
+    (question) => question.theme === id,
+  );
 }

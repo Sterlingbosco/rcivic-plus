@@ -1,4 +1,5 @@
 import { useApp } from '../app-context';
+import { correctText, selectedIndices } from '../domain/answers';
 import { getResult } from '../domain/quiz';
 import { themes } from '../data/content';
 import { Icon } from '../components/Icon';
@@ -132,20 +133,26 @@ export function Result() {
                     <span className="tag">
                       {question.type === 'QUESTION_OFFICIELLE'
                         ? 'ÉNONCÉ OFFICIEL · CORRECTION PÉDAGOGIQUE'
-                        : 'EXERCICE D’ENTRAÎNEMENT'}
+                        : question.type === 'QUESTION_PEDAGOGIQUE'
+                          ? 'QUESTION D’ENTRAÎNEMENT REFORMULÉE'
+                          : 'EXERCICE D’ENTRAÎNEMENT'}
                     </span>
                     <h3>{question.question}</h3>
                     <p>
                       Votre réponse :{' '}
                       {selected === null || selected === undefined
                         ? 'Sans réponse'
-                        : question.answers[selected]}
+                        : selectedIndices(question, selected)
+                            .map((choice) => question.answers[choice])
+                            .join(' · ')}
                     </p>
                     <p>
-                      <strong>À retenir : {question.answers[question.correctAnswer]}</strong>
+                      <strong>À retenir : {correctText(question)}</strong>
                     </p>
                     <p>{question.explanation}</p>
-                    <SourceLink id={question.answerSourceId} />
+                    {[question.answerSourceId, ...(question.extraSourceIds ?? [])].map((id) => (
+                      <SourceLink key={id} id={id} />
+                    ))}
                   </div>
                 </article>
               );

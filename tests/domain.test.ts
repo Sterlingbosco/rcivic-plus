@@ -1,6 +1,14 @@
 import { describe, expect, it } from 'vitest';
 import { questions } from '../src/data/content';
 import {
+  correctIndices,
+  correctText,
+  isCorrectAnswer,
+  isMultiple,
+  selectedIndices,
+  toStoredAnswer,
+} from '../src/domain/answers';
+import {
   startQuiz,
   getCurrentQuestion,
   submitAnswer,
@@ -199,3 +207,68 @@ describe('répétition espacée', () => {
     expect(selectReview(questions, stats, now, 3)[0]?.id).toBe(wrong.id);
   });
 });
+
+describe('réponses multiples', () => {
+  const base = questions.find((q) => q.type === 'QUESTION_OFFICIELLE')!;
+  const multiple = {
+    ...base,
+    id: 'MULTI-1',
+    answers: ['A', 'B', 'C', 'D'] as typeof base.answers,
+    correctAnswer: 0,
+    correctAnswers: [0, 2],
+  };
+  it('exige toutes les bonnes réponses et aucune autre', () => {
+    expect(isMultiple(multiple)).toBe(true);
+    const full = toStoredAnswer(multiple, [0, 2]);
+    expect(isCorrectAnswer(multiple, full)).toBe(true);
+    expect(isCorrectAnswer(multiple, toStoredAnswer(multiple, [0]))).toBe(false);
+    expect(isCorrectAnswer(multiple, toStoredAnswer(multiple, [0, 1, 2]))).toBe(false);
+    expect(isCorrectAnswer(multiple, null)).toBe(false);
+    expect(selectedIndices(multiple, full)).toEqual([0, 2]);
+    expect(correctText(multiple)).toBe('A · C');
+  });
+  it('garde les bonnes réponses après mélange et refuse une réponse invalide', () => {
+    for (let seed = 0; seed < 20; seed++) {
+      let state = seed + 1;
+      const random = () => (state = (state * 48271) % 2147483647) / 2147483647;
+      const session = startQuiz([multiple], 'training', new Date(), random);
+      const shuffled = session.questions[0]!;
+      expect(
+        correctIndices(shuffled)
+          .map((index) => shuffled.answers[index])
+          .sort(),
+      ).toEqual(['A', 'C']);
+      expect(shuffled.correctAnswer).toBe(Math.min(...correctIndices(shuffled)));
+      const answered = submitAnswer(session, toStoredAnswer(shuffled, correctIndices(shuffled)));
+      expect(isCorrectAnswer(shuffled, answered.answers[0]!)).toBe(true);
+    }
+    const session = startQuiz([multiple], 'training');
+    expect(() => submitAnswer(session, 0)).toThrow();
+    expect(() => submitAnswer(session, 16)).toThrow();
+  });
+  it('exclut les reformulations pédagogiques du tirage de l’examen', () => {
+    const pool = [
+      ...Array.from({ length: 35 }, (_, i) => ({ ...base, id: `K-${i}`, theme: themeOf(i) })),
+      ...Array.from({ length: 15 }, (_, i) => ({
+        ...questions.at(-1)!,
+        id: `S-${i}`,
+        theme: themeOf(i),
+      })),
+      { ...base, id: 'PEDA-1', type: 'QUESTION_PEDAGOGIQUE' as const, sourceId: null },
+    ];
+    for (let run = 0; run < 20; run++)
+      expect(selectExamQuestions(pool).some((q) => q.id === 'PEDA-1')).toBe(false);
+  });
+});
+
+function themeOf(index: number) {
+  return (
+    [
+      'principes_valeurs',
+      'institutions',
+      'droits_devoirs',
+      'histoire_culture',
+      'vie_societe',
+    ] as const
+  )[index % 5]!;
+}

@@ -1,3 +1,4 @@
+import { correctIndices, isCorrectAnswer, isValidStoredAnswer } from './answers';
 import { themeSchema, type Question, type QuizMode, type QuizSession } from './schema';
 
 export const EXAM_RULES = {
@@ -29,10 +30,14 @@ export function startQuiz(
     throw new Error('Le quiz nécessite des questions distinctes.');
   const questions = shuffle(pool, random).map((question) => {
     const indices = shuffle([0, 1, 2, 3], random);
+    const remapped = correctIndices(question)
+      .map((index) => indices.indexOf(index))
+      .sort((a, b) => a - b);
     return {
       ...question,
       answers: indices.map((index) => question.answers[index]!) as Question['answers'],
-      correctAnswer: indices.indexOf(question.correctAnswer),
+      correctAnswer: remapped[0]!,
+      ...(question.correctAnswers ? { correctAnswers: remapped } : {}),
     };
   });
   return {
@@ -62,7 +67,7 @@ export function submitAnswer(
 ): QuizSession {
   if (session.finishedAt || (session.deadline && now.getTime() >= Date.parse(session.deadline)))
     throw new Error('La session est terminée.');
-  if (!Number.isInteger(answerIndex) || answerIndex < 0 || answerIndex > 3)
+  if (!isValidStoredAnswer(getCurrentQuestion(session), answerIndex))
     throw new Error('Réponse invalide.');
   if (session.answers[session.index] !== null)
     throw new Error('Cette réponse est déjà enregistrée.');
@@ -96,7 +101,7 @@ export function getResult(session: QuizSession) {
   const errors: Question[] = [];
   let score = 0;
   session.questions.forEach((question, index) => {
-    const correct = session.answers[index] === question.correctAnswer;
+    const correct = isCorrectAnswer(question, session.answers[index]!);
     if (correct) score++;
     else errors.push(question);
     byTheme[question.theme].total++;

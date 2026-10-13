@@ -100,7 +100,11 @@ export function Review({
               <div>
                 <h3>{question.question}</h3>
                 <p>
-                  {question.type === 'EXERCICE_ENTRAINEMENT' ? 'Exercice d’entraînement · ' : ''}
+                  {question.type === 'EXERCICE_ENTRAINEMENT'
+                    ? 'Exercice d’entraînement · '
+                    : question.type === 'QUESTION_PEDAGOGIQUE'
+                      ? 'Question reformulée · '
+                      : ''}
                   {stat
                     ? `${stat.incorrect} erreur(s) sur ${stat.attempts} tentative(s) · prochaine révision ${new Date(stat.nextReview).toLocaleDateString('fr-FR')}`
                     : 'Une nouvelle notion à découvrir'}

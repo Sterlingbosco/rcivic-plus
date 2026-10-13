@@ -5,11 +5,19 @@ import { completeSession, recordAnswer } from '../domain/progress';
 import { AudioButton, PageHeading, ProgressBar, SourceLink } from '../components/Primitives';
 import { Icon } from '../components/Icon';
 import { stop } from '../platform/audio';
+import {
+  correctIndices,
+  correctText,
+  isCorrectAnswer,
+  isMultiple,
+  selectedIndices,
+  toStoredAnswer,
+} from '../domain/answers';
 
 export function Quiz() {
   const { progress, commit, saving } = useApp();
   const session = progress.activeSession;
-  const [selected, setSelected] = useState<number | null>(null);
+  const [selected, setSelected] = useState<number[]>([]);
   const [now, setNow] = useState(Date.now());
   const [error, setError] = useState('');
   const question = session ? getCurrentQuestion(session) : null;
@@ -19,7 +27,7 @@ export function Quiz() {
     ? Math.max(0, Math.ceil((Date.parse(session.deadline) - now) / 1000))
     : null;
   useEffect(() => {
-    setSelected(null);
+    setSelected([]);
     setError('');
     stop();
     document.querySelector<HTMLElement>('h1')?.focus();
@@ -55,16 +63,17 @@ export function Quiz() {
       </>
     );
   async function answer() {
-    if (selected === null || !session || !question || saving) return;
+    if (!selected.length || !session || !question || saving) return;
     try {
-      let answered = submitAnswer(session, selected);
+      const stored = toStoredAnswer(question, selected);
+      let answered = submitAnswer(session, stored);
       let updated = isExam
         ? progress
         : recordAnswer(
             progress,
             session.id,
             question,
-            selected === question.correctAnswer,
+            isCorrectAnswer(question, stored),
             session.mode,
             new Date(),
             session.index,
@@ -89,8 +98,19 @@ export function Quiz() {
       navigate('resultat');
     } else await commit({ ...progress, activeSession: nextQuestion(session) });
   }
-  const correct = submitted === question.correctAnswer;
-  const checked = submitted ?? selected;
+  const multiple = isMultiple(question);
+  const correct = isCorrectAnswer(question, submitted);
+  const checked = submitted !== null ? selectedIndices(question, submitted) : selected;
+  const correctSet = correctIndices(question);
+  function toggle(index: number) {
+    setSelected((current) =>
+      multiple
+        ? current.includes(index)
+          ? current.filter((entry) => entry !== index)
+          : [...current, index].sort((a, b) => a - b)
+        : [index],
+    );
+  }
   return (
     <div className="study-container">
       <div className="quiz-top">
@@ -132,7 +152,9 @@ export function Quiz() {
           >
             {question.type === 'QUESTION_OFFICIELLE'
               ? 'ÉNONCÉ OFFICIEL CSP'
-              : 'EXERCICE D’ENTRAÎNEMENT'}
+              : question.type === 'QUESTION_PEDAGOGIQUE'
+                ? 'QUESTION D’ENTRAÎNEMENT REFORMULÉE'
+                : 'EXERCICE D’ENTRAÎNEMENT'}
           </span>
           <AudioButton text={`${question.question} ${question.answers.join('. ')}`} />
         </div>
@@ -142,33 +164,45 @@ export function Quiz() {
             de mise en situation.
           </p>
         )}
+        {question.type === 'QUESTION_PEDAGOGIQUE' && (
+          <p className="content-disclaimer">
+            Reformulation pédagogique d’un thème de la liste officielle. Ce n’est pas le libellé
+            officiel de la question.
+          </p>
+        )}
         <h1 tabIndex={-1}>{question.question}</h1>
         <p className="question-help">
-          Une seule réponse.{' '}
+          {multiple
+            ? 'Plusieurs réponses sont correctes : cochez toutes les bonnes réponses pour valider la question.'
+            : 'Une seule réponse.'}{' '}
           {question.type === 'QUESTION_OFFICIELLE' &&
             'Propositions d’entraînement créées par RCIVIC+.'}
         </p>
         <fieldset className="answers" disabled={submitted !== null || saving}>
-          <legend className="sr-only">Choisissez votre réponse</legend>
-          {question.answers.map((text, index) => (
-            <label
-              key={`${question.id}-${text}`}
-              className={`answer-option ${checked === index ? 'selected' : ''} ${submitted !== null && !isExam && index === question.correctAnswer ? 'correct' : ''} ${submitted !== null && !isExam && checked === index && !correct ? 'incorrect' : ''}`}
-            >
-              <input
-                type="radio"
-                name="answer"
-                value={index}
-                checked={checked === index}
-                onChange={() => setSelected(index)}
-              />
-              <span className="answer-letter">{'ABCD'[index]}</span>
-              <span className="answer-text">{text}</span>
-              {submitted !== null && !isExam && index === question.correctAnswer && (
-                <Icon name="check" size={19} />
-              )}
-            </label>
-          ))}
+          <legend className="sr-only">
+            {multiple ? 'Cochez toutes les bonnes réponses' : 'Choisissez votre réponse'}
+          </legend>
+          {question.answers.map((text, index) => {
+            const isChecked = checked.includes(index);
+            const isRight = correctSet.includes(index);
+            return (
+              <label
+                key={`${question.id}-${text}`}
+                className={`answer-option ${isChecked ? 'selected' : ''} ${submitted !== null && !isExam && isRight ? 'correct' : ''} ${submitted !== null && !isExam && isChecked && !isRight ? 'incorrect' : ''}`}
+              >
+                <input
+                  type={multiple ? 'checkbox' : 'radio'}
+                  name="answer"
+                  value={index}
+                  checked={isChecked}
+                  onChange={() => toggle(index)}
+                />
+                <span className="answer-letter">{'ABCD'[index]}</span>
+                <span className="answer-text">{text}</span>
+                {submitted !== null && !isExam && isRight && <Icon name="check" size={19} />}
+              </label>
+            );
+          })}
         </fieldset>
         {error && (
           <p role="alert" className="error-text">
@@ -188,12 +222,17 @@ export function Quiz() {
               {correct && <span className="tag">+10 XP</span>}
             </div>
             <p>
-              <strong>La réponse à retenir : {question.answers[question.correctAnswer]}</strong>
+              <strong>
+                {multiple ? 'Les réponses à retenir' : 'La réponse à retenir'} :{' '}
+                {correctText(question)}
+              </strong>
             </p>
             <p>{question.explanation}</p>
             <div className="feedback-key">{question.keyPoint}</div>
             {!correct && <p>Cette notion rejoint vos révisions. Aucune perte d’XP.</p>}
-            <SourceLink id={question.answerSourceId} />
+            {[question.answerSourceId, ...(question.extraSourceIds ?? [])].map((id) => (
+              <SourceLink key={id} id={id} />
+            ))}
             <button
               className="button button-primary"
               disabled={saving}
@@ -210,13 +249,15 @@ export function Quiz() {
             <span className="muted">
               {saving
                 ? 'Enregistrement…'
-                : checked === null
-                  ? 'Choisissez une réponse pour continuer.'
+                : !checked.length
+                  ? multiple
+                    ? 'Cochez toutes les bonnes réponses pour continuer.'
+                    : 'Choisissez une réponse pour continuer.'
                   : 'Vous pouvez encore changer votre choix.'}
             </span>
             <button
               className="button button-primary"
-              disabled={selected === null || saving || remaining === 0}
+              disabled={!selected.length || saving || remaining === 0}
               onClick={() => void answer()}
             >
               Valider ma réponse

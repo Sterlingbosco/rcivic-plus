@@ -37,14 +37,16 @@ export const questionSchema = z
     level: z.literal('CSP'),
     theme: themeSchema,
     subtheme: text,
-    type: z.enum(['QUESTION_OFFICIELLE', 'EXERCICE_ENTRAINEMENT']),
+    type: z.enum(['QUESTION_OFFICIELLE', 'QUESTION_PEDAGOGIQUE', 'EXERCICE_ENTRAINEMENT']),
     question: text,
     answers: z.tuple([text, text, text, text]),
     correctAnswer: z.number().int().min(0).max(3),
+    correctAnswers: z.array(z.number().int().min(0).max(3)).min(2).max(3).optional(),
     explanation: text,
     keyPoint: text,
     sourceId: text.nullable(),
     answerSourceId: text,
+    extraSourceIds: z.array(text).min(1).optional(),
     explanationType: z.literal('CONTENU_PEDAGOGIQUE'),
     choicesType: z.literal('EXERCICE_ENTRAINEMENT'),
     status: z.literal('source_checked'),
@@ -61,11 +63,24 @@ export const questionSchema = z
     if (question.type === 'QUESTION_OFFICIELLE' && !question.sourceId) {
       context.addIssue({ code: z.ZodIssueCode.custom, message: 'Source officielle obligatoire.' });
     }
-    if (question.type === 'EXERCICE_ENTRAINEMENT' && question.sourceId !== null) {
+    if (question.type !== 'QUESTION_OFFICIELLE' && question.sourceId !== null) {
       context.addIssue({
         code: z.ZodIssueCode.custom,
-        message: 'Un exercice original ne doit pas avoir de source d’énoncé officiel.',
+        message: 'Un exercice ou une reformulation ne doit pas avoir de source d’énoncé officiel.',
       });
+    }
+    if (question.correctAnswers) {
+      const unique = new Set(question.correctAnswers);
+      if (
+        unique.size !== question.correctAnswers.length ||
+        question.correctAnswer !== Math.min(...question.correctAnswers)
+      ) {
+        context.addIssue({
+          code: z.ZodIssueCode.custom,
+          message:
+            'Réponses multiples incohérentes : indices distincts, correctAnswer = le plus petit.',
+        });
+      }
     }
   });
 export const questionStatsSchema = z
@@ -91,7 +106,7 @@ export const sessionSchema = z
     mode: z.enum(['training', 'review', 'exam']),
     questions: z.array(questionSchema).min(1).max(100),
     index: z.number().int().nonnegative(),
-    answers: z.array(z.number().int().min(0).max(3).nullable()),
+    answers: z.array(z.number().int().min(0).max(15).nullable()),
     startedAt: instant,
     deadline: instant.nullable(),
     finishedAt: instant.nullable(),
@@ -169,6 +184,7 @@ export function validateCorpus(rawQuestions: unknown, rawSources: unknown) {
   for (const question of questions) {
     if (
       !sourceIds.has(question.answerSourceId) ||
+      (question.extraSourceIds ?? []).some((id) => !sourceIds.has(id)) ||
       (question.sourceId && !sourceIds.has(question.sourceId))
     ) {
       throw new Error(`Source inconnue : ${question.id}`);

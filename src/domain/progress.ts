@@ -1,5 +1,6 @@
 import { officialThemeTotals } from '../data/content';
 import { updateQuestionStats } from './review';
+import { isCorrectAnswer } from './answers';
 import { getResult } from './quiz';
 import {
   themeSchema,
@@ -102,7 +103,7 @@ export function completeSession(
         updated,
         session.id,
         question,
-        session.answers[index] === question.correctAnswer,
+        isCorrectAnswer(question, session.answers[index]!),
         'exam',
         now,
         index,
