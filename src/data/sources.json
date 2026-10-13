@@ -428,5 +428,55 @@
     "updatedAt": null,
     "license": "Etalab 2.0, sauf contenus tiers signalés",
     "type": "institutional"
+  },
+  {
+    "id": "coq",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Le coq",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/le-coq/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "equality",
+    "organization": "Ministère de l’Intérieur",
+    "title": "L’égalité (1/3)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/egalite-1/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "fraternity",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La fraternité (1/2)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/fraternite-1/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "insult",
+    "organization": "Service Public — DILA",
+    "title": "Injure",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F32077",
+    "checkedAt": "2026-10-13",
+    "updatedAt": "2026-03-10",
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "job-discrimination",
+    "organization": "Ministère de la Justice",
+    "title": "Discrimination au travail",
+    "url": "https://www.justice.fr/fiche/discrimination-travail",
+    "checkedAt": "2026-10-13",
+    "updatedAt": "2025-10-20",
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
   }
 ]

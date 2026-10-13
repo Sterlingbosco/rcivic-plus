@@ -203,7 +203,7 @@ test('le corpus enrichi conserve une progression et une session de l’ancien lo
   };
   await seed(page, previous);
   await page.goto('/#/accueil');
-  await expect(page.locator('.theme-card').first()).toContainText('6/8 notions comprises');
+  await expect(page.locator('.theme-card').first()).toContainText('6/24 notions comprises');
   expect((await storedProgress(page)).xp).toBe(420);
   await page.getByRole('button', { name: 'Reprendre ma session' }).click();
   await expect(page.getByText('QUESTION 1 / 6', { exact: true })).toBeVisible();
