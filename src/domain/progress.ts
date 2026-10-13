@@ -1,4 +1,4 @@
-import { officialThemeTotals } from '../data/content';
+import { officialThemeTotals, questions } from '../data/content';
 import { updateQuestionStats } from './review';
 import { isCorrectAnswer } from './answers';
 import { getResult } from './quiz';
@@ -204,24 +204,22 @@ export function getStatistics(progress: Progress, questions: Question[], profile
   };
 }
 
+const questionById = new Map(questions.map((question) => [question.id, question]));
+
 export function getBadges(progress: Progress, now = new Date()) {
   const unlocked: string[] = [...progress.earnedBadges];
   if (progress.understood.length) unlocked.push('first-step');
   if (Object.keys(progress.questionStats).length >= 100) unlocked.push('regular');
   if (getStreak(progress.activityDays, now) >= 7) unlocked.push('week');
   for (const theme of themeSchema.options) {
-    const prefix = {
-      principes_valeurs: 'PV',
-      institutions: 'SI',
-      droits_devoirs: 'DD',
-      histoire_culture: 'HG',
-      vie_societe: 'VS',
-    }[theme];
     for (const profile of profileSchema.options) {
       const total = officialThemeTotals[profile][theme];
       if (!total) continue;
       const mastery = Object.entries(progress.questionStats)
-        .filter(([id]) => id.startsWith(`${profile}-${prefix}-`))
+        .filter(([id]) => {
+          const question = questionById.get(id);
+          return question?.level === profile && question.theme === theme;
+        })
         .reduce((sum, [, stat]) => sum + stat.mastery, 0);
       if (mastery / total >= 0.9) unlocked.push(theme);
     }
