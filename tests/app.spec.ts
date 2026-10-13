@@ -50,11 +50,15 @@ async function welcome(page: Page) {
 async function answerCurrent(page: Page, correct: boolean) {
   const heading = await page.getByRole('heading', { level: 1 }).innerText();
   const original = questions.find((question) => question.question === heading)!;
-  const text =
-    original.answers[correct ? original.correctAnswer : (original.correctAnswer + 1) % 4]!;
-  await page
-    .getByRole('radio', { name: new RegExp(text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) })
-    .check();
+  const right = original.correctAnswers ?? [original.correctAnswer];
+  const wrong = [0, 1, 2, 3].find((index) => !right.includes(index))!;
+  const role = original.correctAnswers ? 'checkbox' : 'radio';
+  for (const index of correct ? right : [wrong]) {
+    const text = original.answers[index]!;
+    await page
+      .getByRole(role, { name: new RegExp(text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) })
+      .check();
+  }
   await page.getByRole('button', { name: 'Valider ma réponse' }).click();
 }
 
@@ -208,6 +212,33 @@ test('le corpus enrichi conserve une progression et une session de l’ancien lo
   await page.getByRole('button', { name: 'Reprendre ma session' }).click();
   await expect(page.getByText('QUESTION 1 / 6', { exact: true })).toBeVisible();
   expect((await storedProgress(page)).activeSession!.id).toBe(previous.activeSession.id);
+});
+
+test('question à réponses multiples : il faut cocher toutes les bonnes réponses', async ({
+  page,
+}) => {
+  const multi = questions.find((question) => question.correctAnswers)!;
+  const right = multi.correctAnswers!;
+  await welcome(page);
+  await seed(page, {
+    ...createProgress(),
+    preferences: { ...createProgress().preferences, onboarded: true },
+    activeSession: startQuiz([multi], 'training'),
+  });
+  await page.goto('/#/accueil');
+  await page.getByRole('button', { name: 'Reprendre ma session' }).click();
+  await expect(page.getByText('Plusieurs réponses sont correctes', { exact: false })).toBeVisible();
+  await expect(page.getByRole('checkbox')).toHaveCount(4);
+  const session = (await storedProgress(page)).activeSession!;
+  const shown = session.questions[0]!;
+  const shownRight = shown.correctAnswers!;
+  expect(shownRight).toHaveLength(right.length);
+  const boxes = page.getByRole('checkbox');
+  await boxes.nth(shownRight[0]!).check();
+  await page.getByRole('button', { name: 'Valider ma réponse' }).click();
+  await expect(page.getByText('Pas encore. Voici l’explication.')).toBeVisible();
+  expect((await storedProgress(page)).questionStats[multi.id]?.incorrect).toBe(1);
+  await expect(page.getByText('Les réponses à retenir', { exact: false })).toBeVisible();
 });
 
 test('examen public : 28 connaissances, 12 exercices, reprise, score 32/40 et corrections finales', async ({
