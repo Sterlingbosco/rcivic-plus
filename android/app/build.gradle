@@ -1,5 +1,9 @@
 apply plugin: 'com.android.application'
 
+// Passés par le workflow (-PappVersionName=0.3.1 -PappVersionCode=<n>) ; valeurs locales par défaut.
+def appVersionCode = (project.findProperty('appVersionCode') ?: '1').toString().toInteger()
+def appVersionName = (project.findProperty('appVersionName') ?: '0.0.0-local').toString()
+
 android {
     namespace "io.github.sterlingbosco.rcivic"
     compileSdk rootProject.ext.compileSdkVersion
@@ -7,9 +11,8 @@ android {
         applicationId "io.github.sterlingbosco.rcivic"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        // Passés par le workflow (-PappVersionName=0.3.1 -PappVersionCode=<n>) ; valeurs locales par défaut.
-        versionCode (project.findProperty('appVersionCode') ?: '1').toInteger()
-        versionName (project.findProperty('appVersionName') ?: '0.0.0-local')
+        versionCode appVersionCode
+        versionName appVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
