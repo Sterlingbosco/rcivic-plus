@@ -15,6 +15,22 @@ Application web de **préparation pédagogique à l'examen civique** français (
 - Mode clair / sombre (automatique ou réglé dans Paramètres), lecture audio par la voix du navigateur, texte redimensionnable jusqu'à 200 %.
 - PWA installable ; progression stockée localement (IndexedDB) et exportable en JSON.
 
+## Installer sur un téléphone
+
+RCIVIC+ est une application web installable (PWA) : il n'y a pas de fichier APK ni de publication sur un magasin d'applications.
+
+**Android (Chrome)**
+
+1. Ouvrir <https://sterlingbosco.github.io/rcivic-plus/> dans Chrome, **avec une connexion**.
+2. Menu ⋮ → **Installer l'application** (ou **Ajouter à l'écran d'accueil**), puis confirmer.
+3. Lancer RCIVIC+ depuis l'icône ainsi créée.
+
+**iPhone / iPad (Safari)** : bouton Partager → **Sur l'écran d'accueil**.
+
+**Hors connexion** : après ce premier chargement en ligne, le contenu (leçons, quiz, examen blanc) fonctionne sans réseau et la progression reste sur l'appareil. Seuls les liens vers les pages sources officielles demandent une connexion. Pensez à exporter votre progression (Paramètres) avant de changer d'appareil ou d'effacer les données du navigateur : elle n'est pas synchronisée.
+
+Le fonctionnement hors connexion est vérifié par des tests automatisés sur navigateur ; l'installation sur des téléphones réels n'a pas encore été testée.
+
 ## État du contenu
 
 178 des 191 énoncés officiels extraits sont publiés avec une réponse vérifiée sur une source institutionnelle (fiches de formation-civique.interieur.gouv.fr en priorité, puis Service Public, BnF, Légifrance, etc.). Les 13 autres attendent une source lisible ou un arbitrage éditorial. Toutes les réponses restent à relire par un humain (`humanReviewed: false`).
