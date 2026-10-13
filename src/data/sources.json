@@ -748,5 +748,85 @@
     "updatedAt": "2025-11-06",
     "license": "Référence factuelle ; aucun visuel repris",
     "type": "institutional"
+  },
+  {
+    "id": "r1-misanthrope",
+    "organization": "BnF Essentiels",
+    "title": "Le Misanthrope",
+    "url": "https://essentiels.bnf.fr/fr/article/06937cec-9acc-4050-9fc6-e4a78270478b-misanthrope",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "r1-fleurs-mal",
+    "organization": "BnF Essentiels",
+    "title": "Les Fleurs du Mal",
+    "url": "https://essentiels.bnf.fr/fr/article/e0e681e1-09a5-41e5-9800-beb77e313582-fleurs-mal",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "r1-beauvoir",
+    "organization": "Bibliothèque nationale de France",
+    "title": "Simone de Beauvoir",
+    "url": "https://www.bnf.fr/fr/mediatheque/simone-de-beauvoir",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "r1-camus",
+    "organization": "Bibliothèque nationale de France",
+    "title": "Albert Camus (1913-1960) - Bibliographie",
+    "url": "https://www.bnf.fr/fr/albert-camus-1913-1960-bibliographie",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "r2-corse",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Corse",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-journ%C3%A9e/journ%C3%A9e-2/histoire/les-regions-fran%C3%A7aises/corse/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "r2-louvre",
+    "organization": "Musée du Louvre",
+    "title": "Le musée du Louvre en bref",
+    "url": "https://presse.louvre.fr/le-musee-du-louvre-1063000201419/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "r3-prevention2",
+    "organization": "Ministère de l’Intérieur – Formation civique",
+    "title": "Prévention et promotion de la santé (2/2)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-soci%C3%A9t%C3%A9-fran%C3%A7aise/sante/prevention-et-promotion-de-la-sante-2/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "r3-systeme-educatif",
+    "organization": "Ministère de l’Intérieur – Formation civique",
+    "title": "Le système éducatif",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-journ%C3%A9e/journ%C3%A9e-1/vivre-dans-la-soci%C3%A9t%C3%A9-fran%C3%A7aise/parentalit%C3%A9/le-systeme-educatif/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
   }
 ]
