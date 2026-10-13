@@ -18,6 +18,7 @@
     "test": "vitest run",
     "validate:data": "vitest run tests/data.test.ts",
     "build": "npm run typecheck && vite build && node scripts/build-pwa.mjs",
+    "android:sync": "npm run build && cap sync android",
     "preview": "vite preview --host 127.0.0.1",
     "test:e2e": "playwright test",
     "check": "npm run validate:data && npm run typecheck && npm run lint && npm run format:check && npm test && npm run build"
@@ -28,6 +29,9 @@
     "zod": "3.25.76"
   },
   "devDependencies": {
+    "@capacitor/android": "7.6.9",
+    "@capacitor/cli": "7.6.9",
+    "@capacitor/core": "7.6.9",
     "@eslint/js": "9.39.5",
     "@playwright/test": "1.56.1",
     "@types/node": "22.18.6",

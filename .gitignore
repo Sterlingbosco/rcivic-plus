@@ -7,3 +7,7 @@ test-results/
 *.local
 AGENTS.local.md
 .devin/
+
+# Clés de signature Android : ne jamais commiter
+*.jks
+*.keystore
