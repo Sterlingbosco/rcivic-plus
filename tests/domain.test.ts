@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { questions } from '../src/data/content';
+import { profileContent, questions } from '../src/data/content';
+import { progressSchema } from '../src/domain/schema';
 import {
   correctIndices,
   correctText,
@@ -85,8 +86,8 @@ describe('quiz indépendant de l’UI', () => {
     expect(getResult(finished).unanswered).toBe(40);
     expect(getResult(finished).answeredErrors).toBe(0);
     expect(progress.xp).toBe(100);
-    expect(getStatistics(progress, questions).attempts).toBe(0);
-    expect(getStatistics(progress, questions).seen).toBe(0);
+    expect(getStatistics(progress, questions, 'CSP').attempts).toBe(0);
+    expect(getStatistics(progress, questions, 'CSP').seen).toBe(0);
   });
   it('ne permet pas de répondre après l’échéance et compte les questions non répondues', () => {
     const session = startQuiz([question], 'exam', now);
@@ -159,16 +160,16 @@ describe('récompenses, statistiques et dates', () => {
     expect(first.xp).toBe(10);
     const duplicate = recordAnswer(first, 's1', question, true, 'training', now, 0);
     expect(duplicate).toEqual(first);
-    expect(getStatistics(first, questions).correct).toBe(1);
+    expect(getStatistics(first, questions, 'CSP').correct).toBe(1);
   });
   it('distingue couverture et précision et débloque le premier badge', () => {
     const first = completeLesson(createProgress(), question.id, now);
     expect(getBadges(first, now)).toContain('first-step');
     expect(getBadges(first, now)).not.toContain('principes_valeurs');
-    expect(getStatistics(first, questions).accuracy).toBe(null);
+    expect(getStatistics(first, questions, 'CSP').accuracy).toBe(null);
     const answered = recordAnswer(first, 's1', question, true, 'training', now, 0);
-    expect(getStatistics(answered, questions).accuracy).toBe(100);
-    expect(getStatistics(answered, questions).seen).toBe(1);
+    expect(getStatistics(answered, questions, 'CSP').accuracy).toBe(100);
+    expect(getStatistics(answered, questions, 'CSP').seen).toBe(1);
   });
   it('récompense un examen une fois et conserve ses badges au-delà de 50 sessions', () => {
     const exam = completed('exam', 40);
@@ -179,8 +180,8 @@ describe('récompenses, statistiques et dates', () => {
     for (let index = 0; index < 51; index++) progress = completeSession(progress, completed(), now);
     expect(progress.history).toHaveLength(50);
     expect(getBadges(progress, now)).toContain('perfect');
-    expect(getStatistics(progress, questions).bestExam).toBe(40);
-    expect(getStatistics(progress, questions).exams).toBe(1);
+    expect(getStatistics(progress, questions, 'CSP').bestExam).toBe(40);
+    expect(getStatistics(progress, questions, 'CSP').exams).toBe(1);
   });
   it('calcule les séries par jours, sans ajouter plusieurs jours pour une seule date', () => {
     expect(getStreak(['2026-10-09', '2026-10-10', '2026-10-11'], now)).toBe(3);
@@ -272,3 +273,48 @@ function themeOf(index: number) {
     ] as const
   )[index % 5]!;
 }
+
+describe('profils d’examen', () => {
+  const clone = <T>(value: T): T => structuredClone(value);
+  it('migre une ancienne sauvegarde : profil CSP, résumé d’examen et historique rattachés au CSP', () => {
+    const legacy = clone(createProgress()) as Record<string, unknown>;
+    legacy.examSummary = { count: 2, totalScore: 70, bestScore: 38 };
+    legacy.preferences = { dailyGoal: 10, audioRate: 1, onboarded: true };
+    legacy.history = [
+      { id: 'a', mode: 'exam', score: 32, total: 40, finishedAt: new Date().toISOString() },
+    ];
+    const parsed = progressSchema.parse(legacy);
+    expect(parsed.preferences.profile).toBe('CSP');
+    expect(parsed.examSummary).toEqual({ CSP: { count: 2, totalScore: 70, bestScore: 38 } });
+    expect(parsed.history[0]!.profile).toBe('CSP');
+    expect(getStatistics(parsed, questions, 'CSP').bestExam).toBe(38);
+    expect(getStatistics(parsed, questions, 'CR').bestExam).toBe(null);
+  });
+  it('sépare le contenu par profil : CSP publié, CR et naturalisation vides sans mélange', () => {
+    const csp = profileContent('CSP');
+    expect(csp.official.length).toBeGreaterThan(100);
+    expect(csp.official.every((q) => q.level === 'CSP')).toBe(true);
+    for (const profile of ['CR', 'NAT'] as const) {
+      const content = profileContent(profile);
+      expect(content.all.every((q) => q.level === profile)).toBe(true);
+      expect(content.official.some((q) => q.level !== profile)).toBe(false);
+    }
+    expect(profileContent('CR').officialTotal).toBe(188);
+  });
+  it('compte les résumés d’examen par profil', () => {
+    const pool = questions.filter((q) => q.level === 'CSP').slice(0, 40);
+    let session = startQuiz(pool, 'exam');
+    for (let i = 0; i < 40; i++) {
+      session = submitAnswer(
+        session,
+        toStoredAnswer(getCurrentQuestion(session), correctIndices(getCurrentQuestion(session))),
+      );
+      if (i < 39) session = nextQuestion(session);
+    }
+    const done = completeSession(createProgress(), finishQuiz(session));
+    expect(done.examSummary.CSP?.count).toBe(1);
+    expect(done.examSummary.CR).toBeUndefined();
+    expect(done.history.at(-1)!.profile).toBe('CSP');
+    expect(getStatistics(done, questions, 'CR').exams).toBe(0);
+  });
+});

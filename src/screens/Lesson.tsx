@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useApp } from '../app-context';
-import { questionsForTheme, themes } from '../data/content';
+import { useApp, useProfile } from '../app-context';
+import { themes } from '../data/content';
+import { PendingProfile } from '../components/PendingProfile';
 import { correctText } from '../domain/answers';
 import { completeLesson } from '../domain/progress';
 import type { ThemeId } from '../domain/schema';
@@ -10,21 +11,24 @@ import { stop } from '../platform/audio';
 
 export function Lesson({ themeId }: { themeId: ThemeId }) {
   const { progress, commit, startSession, saving } = useApp();
-  const pool = questionsForTheme(themeId);
+  const content = useProfile();
+  const pool = content.forTheme(themeId);
   const firstNew = pool.findIndex((question) => !progress.understood.includes(question.id));
   const [index, setIndex] = useState(Math.max(0, firstNew));
   const [finished, setFinished] = useState(false);
-  const question = pool[index]!;
+  const question = pool[index];
   const theme = themes.find((entry) => entry.id === themeId)!;
   useEffect(() => {
     document.querySelector<HTMLElement>('h1')?.focus();
     stop();
   }, [index, finished]);
   async function understood() {
+    if (!question) return;
     await commit(completeLesson(progress, question.id));
     if (index < pool.length - 1) setIndex(index + 1);
     else setFinished(true);
   }
+  if (!question) return <PendingProfile profile={content.profile} />;
   if (finished)
     return (
       <>

@@ -1,24 +1,31 @@
-import { sources, officialQuestions, situations, officialCorpusTotal } from '../data/content';
+import { useProfile } from '../app-context';
+import { sources } from '../data/content';
+import { profileInfo } from '../domain/profiles';
 import { PageHeading } from '../components/Primitives';
 import { Icon } from '../components/Icon';
 import metadata from '../../package.json' with { type: 'json' };
 
 export function Sources() {
+  const content = useProfile();
+  const info = profileInfo(content.profile);
+  const { official: officialQuestions, situations } = content;
   return (
     <>
       <PageHeading
         eyebrow="LA CONFIANCE COMMENCE PAR LA TRANSPARENCE"
         title="Des repères. Des sources. Pas de confusion."
-        description="RCIVIC+ est une application indépendante de préparation à l’examen civique CSP, sans affiliation gouvernementale."
+        description="RCIVIC+ est une application indépendante de préparation à l’examen civique (CSP, CR, naturalisation), sans affiliation gouvernementale."
       />
       <div className="content-types">
         <article className="card">
           <span className="tag tag-blue">QUESTION OFFICIELLE</span>
           <h2>L’énoncé publié</h2>
           <p>
-            Repris de la liste ministérielle CSP. {officialQuestions.length} énoncés sont intégrés
-            dans ce premier lot, sur {officialCorpusTotal} énoncés extraits de la publication
-            consultée.
+            Repris de la liste ministérielle {info.shortName}. {officialQuestions.length} énoncés
+            sont intégrés pour ce profil, sur {content.officialTotal} énoncés dans la liste
+            officielle.{' '}
+            {!content.officialTotal &&
+              'La liste officielle de ce profil n’est pas encore intégrée.'}
           </p>
         </article>
         <article className="card">
@@ -83,9 +90,9 @@ export function Sources() {
         </p>
         <h2>À propos de cette version</h2>
         <p>
-          RCIVIC+ {metadata.version} · parcours introductif CSP. Les graphismes sont originaux et
-          les énoncés sont attribués au ministère de l’Intérieur. Les références client sont
-          préservées ; aucune réponse non vérifiée n’est présentée comme officielle.
+          RCIVIC+ {metadata.version} · parcours introductif. Les graphismes sont originaux et les
+          énoncés sont attribués au ministère de l’Intérieur. Les références client sont préservées
+          ; aucune réponse non vérifiée n’est présentée comme officielle.
         </p>
       </section>
     </>

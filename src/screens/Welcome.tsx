@@ -1,15 +1,18 @@
 import { useState } from 'react';
 import { navigate, useApp } from '../app-context';
 import { Icon } from '../components/Icon';
+import { PROFILES } from '../domain/profiles';
+import type { Profile } from '../domain/schema';
 import { LearningArt } from '../components/Primitives';
 
 export function Welcome() {
   const { progress, commit, saving } = useApp();
   const [goal, setGoal] = useState<5 | 10 | 20 | 30>(10);
+  const [profile, setProfile] = useState<Profile>('CSP');
   async function begin() {
     await commit({
       ...progress,
-      preferences: { ...progress.preferences, dailyGoal: goal, onboarded: true },
+      preferences: { ...progress.preferences, dailyGoal: goal, onboarded: true, profile },
     });
     navigate('accueil');
   }
@@ -23,8 +26,8 @@ export function Welcome() {
         <span>Une notion à la fois.</span>
       </h1>
       <p className="subtitle">
-        Un coach pour comprendre, pratiquer et mémoriser les repères de l’examen civique CSP. Pas
-        besoin de compte, juste l’envie d’avancer.
+        Un coach pour comprendre, pratiquer et mémoriser les repères de l’examen civique. Pas besoin
+        de compte, juste l’envie d’avancer.
       </p>
       <div className="welcome-points">
         <span>
@@ -40,6 +43,30 @@ export function Welcome() {
           Votre progression privée
         </span>
       </div>
+      <fieldset className="profile-options">
+        <legend>Pour quel examen vous préparez-vous ?</legend>
+        {PROFILES.map((option) => (
+          <label
+            className={
+              profile === option.id
+                ? 'setting-option profile-option selected'
+                : 'setting-option profile-option'
+            }
+            key={option.id}
+          >
+            <input
+              type="radio"
+              name="welcomeProfile"
+              checked={profile === option.id}
+              onChange={() => setProfile(option.id)}
+            />
+            <span>
+              <strong>{option.name}</strong>
+              <small>{option.description}</small>
+            </span>
+          </label>
+        ))}
+      </fieldset>
       <fieldset className="setting-options">
         <legend>Combien de temps souhaitez-vous vous réserver ?</legend>
         {([5, 10, 20, 30] as const).map((value) => (

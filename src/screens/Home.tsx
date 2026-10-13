@@ -1,15 +1,20 @@
-import { navigate, useApp } from '../app-context';
-import { officialQuestions, questionsForTheme, themes } from '../data/content';
+import { navigate, useApp, useProfile } from '../app-context';
+import { themes } from '../data/content';
+import { profileInfo } from '../domain/profiles';
+import { PendingProfile } from '../components/PendingProfile';
 import { getStatistics, getStreak, dayKey } from '../domain/progress';
 import { Icon } from '../components/Icon';
 import { LearningArt, PageHeading, ProgressBar } from '../components/Primitives';
 
 export function Home() {
   const { progress } = useApp();
-  const stats = getStatistics(progress, officialQuestions);
+  const content = useProfile();
+  const info = profileInfo(content.profile);
+  const officialQuestions = content.official;
+  const stats = getStatistics(progress, officialQuestions, content.profile);
   const nextTheme =
     themes.find((theme) =>
-      questionsForTheme(theme.id).some((question) => !progress.understood.includes(question.id)),
+      content.forTheme(theme.id).some((question) => !progress.understood.includes(question.id)),
     ) ?? themes[0]!;
   const ongoing = progress.activeSession && !progress.activeSession.finishedAt;
   const lastActivity = progress.activityDays.at(-1);
@@ -21,12 +26,16 @@ export function Home() {
         title="Bonjour, prêt à avancer ?"
         description="Un peu de pratique aujourd’hui, plus de confiance demain."
       />
+      <p className="profile-line">
+        Profil : <strong>{info.name}</strong> · <a href="#/parametres">Changer de profil</a>
+      </p>
+      {!officialQuestions.length && <PendingProfile profile={content.profile} />}
       <div className="home-grid">
         <section className="hero-card">
           <div className="hero-copy">
             <span className="tag tag-blue">
               <span className="tiny-dot" />
-              VOTRE OBJECTIF · CSP
+              VOTRE OBJECTIF · {info.shortName.toUpperCase()}
             </span>
             <h2>
               Comprendre la France.
@@ -38,6 +47,7 @@ export function Home() {
             </p>
             <button
               className="button button-primary"
+              disabled={!ongoing && !officialQuestions.length}
               onClick={() => navigate(ongoing ? 'quiz' : `lecon/${nextTheme.id}`)}
             >
               {ongoing
@@ -60,7 +70,9 @@ export function Home() {
               </strong>
             </div>
             <ProgressBar value={stats.coverage} label="Couverture du lot introductif" />
-            <small>Ce premier lot ne représente pas encore le corpus CSP complet.</small>
+            <small>
+              Ce premier lot ne représente pas encore le corpus {info.shortName} complet.
+            </small>
           </div>
         </section>
         <aside className="daily-card">
@@ -146,7 +158,7 @@ export function Home() {
         </div>
         <div className="theme-grid">
           {themes.map((theme, index) => {
-            const pool = questionsForTheme(theme.id);
+            const pool = content.forTheme(theme.id);
             const completed = pool.filter((question) =>
               progress.understood.includes(question.id),
             ).length;
@@ -167,7 +179,7 @@ export function Home() {
                   <Icon name="arrow" size={17} />
                 </div>
                 <ProgressBar
-                  value={Math.round((completed / pool.length) * 100)}
+                  value={pool.length ? Math.round((completed / pool.length) * 100) : 0}
                   label={`Leçons comprises : ${theme.shortName}`}
                 />
               </a>

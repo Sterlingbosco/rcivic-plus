@@ -3,6 +3,7 @@ import { useApp } from '../app-context';
 import { exportProgress } from '../platform/storage';
 import { getThemePreference, setThemePreference, type ThemePreference } from '../platform/theme';
 import { Icon } from '../components/Icon';
+import { PROFILES } from '../domain/profiles';
 import { PageHeading } from '../components/Primitives';
 
 type InstallPrompt = Event & {
@@ -35,6 +36,45 @@ export function Settings() {
         title="À votre rythme, sur votre appareil."
         description="Aucun compte et aucune information administrative à renseigner."
       />
+      <section className="card settings-card">
+        <h2>Votre profil d’examen</h2>
+        <p>
+          Les leçons, l’entraînement, la révision, l’examen blanc et les statistiques suivent le
+          profil choisi. Votre progression est conservée séparément pour chaque profil.
+        </p>
+        <fieldset className="profile-options">
+          <legend>
+            <span className="sr-only">Profil d’examen</span>
+          </legend>
+          {PROFILES.map((option) => (
+            <label
+              className={
+                progress.preferences.profile === option.id
+                  ? 'setting-option profile-option selected'
+                  : 'setting-option profile-option'
+              }
+              key={option.id}
+            >
+              <input
+                type="radio"
+                name="profile"
+                checked={progress.preferences.profile === option.id}
+                disabled={saving}
+                onChange={() =>
+                  void commit({
+                    ...progress,
+                    preferences: { ...progress.preferences, profile: option.id },
+                  })
+                }
+              />
+              <span>
+                <strong>{option.name}</strong>
+                <small>{option.description}</small>
+              </span>
+            </label>
+          ))}
+        </fieldset>
+      </section>
       <section className="card settings-card">
         <h2>Votre intention quotidienne</h2>
         <p>Un repère pour apprendre, pas une obligation ni un compteur de temps.</p>

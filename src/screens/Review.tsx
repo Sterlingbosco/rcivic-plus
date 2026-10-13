@@ -1,5 +1,5 @@
-import { useApp } from '../app-context';
-import { questions, situations } from '../data/content';
+import { useApp, useProfile } from '../app-context';
+import { PendingProfile } from '../components/PendingProfile';
 import { getStatistics } from '../domain/progress';
 import { selectReview } from '../domain/review';
 import { Icon } from '../components/Icon';
@@ -13,15 +13,18 @@ export function Review({
   training?: boolean;
 }) {
   const { progress, startSession, saving } = useApp();
-  const stats = getStatistics(progress, questions);
+  const content = useProfile();
+  const { situations } = content;
+  const stats = getStatistics(progress, content.all, content.profile);
   const pool = training
     ? situations
     : errorsOnly
       ? stats.errors
-      : selectReview(questions, progress.questionStats);
-  const due = Object.values(progress.questionStats).filter(
-    (stat) => Date.parse(stat.nextReview) <= Date.now(),
-  ).length;
+      : selectReview(content.all, progress.questionStats);
+  const due = content.all.filter((question) => {
+    const stat = progress.questionStats[question.id];
+    return stat && Date.parse(stat.nextReview) <= Date.now();
+  }).length;
   return (
     <>
       <PageHeading
@@ -39,6 +42,7 @@ export function Review({
             : 'Les erreurs répétées passent en premier, puis les notions à échéance et les connaissances fragiles.'
         }
       />
+      {!content.all.length && <PendingProfile profile={content.profile} />}
       {training && (
         <div className="notice">
           <Icon name="shield" />

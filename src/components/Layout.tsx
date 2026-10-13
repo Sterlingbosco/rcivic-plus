@@ -1,5 +1,6 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import { useApp } from '../app-context';
+import { profileInfo } from '../domain/profiles';
 import { getStreak } from '../domain/progress';
 import { Icon } from './Icon';
 
@@ -107,7 +108,7 @@ export function Layout({ route, children }: { route: string; children: ReactNode
             <span className="divider" aria-hidden="true">
               /
             </span>{' '}
-            <strong>Examen civique CSP</strong>
+            <strong>Examen civique {profileInfo(progress.preferences.profile).shortName}</strong>
           </span>
           <div className="topbar-stats">
             <span className="connection-status">

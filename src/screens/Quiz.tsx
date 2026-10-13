@@ -123,7 +123,8 @@ export function Quiz() {
             ? 'EXAMEN BLANC PÉDAGOGIQUE'
             : session.mode === 'review'
               ? 'RÉVISION INTELLIGENTE'
-              : 'ENTRAÎNEMENT'}
+              : 'ENTRAÎNEMENT'}{' '}
+          · {question.level === 'NAT' ? 'NATURALISATION' : question.level}
         </span>
         {remaining !== null && (
           <span className="timer" role="timer" aria-label="Temps restant">

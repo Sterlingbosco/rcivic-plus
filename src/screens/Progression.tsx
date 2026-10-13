@@ -1,19 +1,23 @@
-import { useApp } from '../app-context';
-import { badges, officialQuestions, themes } from '../data/content';
+import { useApp, useProfile } from '../app-context';
+import { badges, themes } from '../data/content';
+import { profileInfo } from '../domain/profiles';
 import { getBadges, getStatistics, getStreak } from '../domain/progress';
 import { Icon } from '../components/Icon';
 import { PageHeading, ProgressBar } from '../components/Primitives';
 
 export function Progression() {
   const { progress } = useApp();
-  const stats = getStatistics(progress, officialQuestions);
+  const content = useProfile();
+  const info = profileInfo(content.profile);
+  const officialQuestions = content.official;
+  const stats = getStatistics(progress, officialQuestions, content.profile);
   const unlocked = getBadges(progress);
   return (
     <>
       <PageHeading
         eyebrow="VOS PETITES VICTOIRES"
         title="Vous construisez vos repères."
-        description="Des chiffres utiles pour savoir quoi pratiquer ensuite. Pas de promesse de réussite à partir d’un petit lot."
+        description={`Profil ${info.shortName}. Des chiffres utiles pour savoir quoi pratiquer ensuite. Pas de promesse de réussite à partir d’un petit lot.`}
       />
       <div className="stats-grid">
         {[
@@ -48,8 +52,8 @@ export function Progression() {
       <section className="card">
         <h2>La couverture de votre lot introductif</h2>
         <p className="muted">
-          La couverture mesure les notions pratiquées, pas leur maîtrise ni celle du corpus CSP
-          complet.
+          La couverture mesure les notions pratiquées, pas leur maîtrise ni celle du corpus{' '}
+          {info.shortName} complet.
         </p>
         <div className="theme-stat-list">
           {stats.byTheme.map((stat) => {
@@ -103,9 +107,10 @@ export function Progression() {
       </section>
       <section className="card history-card">
         <h2>Votre évolution, session après session</h2>
-        {progress.history.length ? (
+        {progress.history.some((entry) => entry.profile === content.profile) ? (
           <ol>
             {progress.history
+              .filter((entry) => entry.profile === content.profile)
               .slice()
               .reverse()
               .map((entry) => (

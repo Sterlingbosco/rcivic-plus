@@ -1,5 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
-import { questions, questionsForTheme } from '../src/data/content';
+import { profileContent, questions } from '../src/data/content';
 import { createProgress } from '../src/domain/progress';
 import { startQuiz } from '../src/domain/quiz';
 import type { Progress } from '../src/domain/schema';
@@ -48,6 +48,8 @@ async function welcome(page: Page) {
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Bonjour, prêt à avancer ?');
 }
 async function answerCurrent(page: Page, correct: boolean) {
+  // Le bouton de validation n'apparaît qu'une fois la nouvelle question affichée.
+  await expect(page.getByRole('button', { name: 'Valider ma réponse' })).toBeVisible();
   const heading = await page.getByRole('heading', { level: 1 }).innerText();
   const original = questions.find((question) => question.question === heading)!;
   const right = original.correctAnswers ?? [original.correctAnswer];
@@ -65,12 +67,13 @@ async function answerCurrent(page: Page, correct: boolean) {
 test('parcours complet : accueil, thème, apprentissage, erreur, XP, résultat et révision persistés', async ({
   page,
 }) => {
+  test.setTimeout(120_000); // parcourt toutes les notions du thème : la durée croît avec le corpus
   const errors: string[] = [];
   page.on('pageerror', (error) => errors.push(error.message));
   page.on('console', (message) => {
     if (message.type() === 'error') errors.push(message.text());
   });
-  const count = questionsForTheme('principes_valeurs').length;
+  const count = profileContent('CSP').forTheme('principes_valeurs').length;
   const lessonXp = count * 30;
   const trainingXp = lessonXp + (count - 1) * 10;
   await page.setViewportSize({ width: 390, height: 844 });
@@ -212,6 +215,54 @@ test('le corpus enrichi conserve une progression et une session de l’ancien lo
   await page.getByRole('button', { name: 'Reprendre ma session' }).click();
   await expect(page.getByText('QUESTION 1 / 6', { exact: true })).toBeVisible();
   expect((await storedProgress(page)).activeSession!.id).toBe(previous.activeSession.id);
+});
+
+test('une ancienne sauvegarde sans profil s’ouvre en profil CSP, sans perte', async ({ page }) => {
+  await welcome(page);
+  const legacy = {
+    ...createProgress(),
+    xp: 120,
+    examSummary: { count: 1, totalScore: 33, bestScore: 33 },
+    preferences: { dailyGoal: 10, audioRate: 1, onboarded: true },
+    history: [
+      { id: 'old', mode: 'exam', score: 33, total: 40, finishedAt: new Date().toISOString() },
+    ],
+  };
+  await seed(page, legacy);
+  await page.goto('/#/progression');
+  await expect(page.getByText('La sauvegarde ne peut pas être lue')).toHaveCount(0);
+  await expect(page.getByText('Profil CSP.', { exact: false })).toBeVisible();
+  await expect(page.getByText('33/40').first()).toBeVisible();
+  expect((await storedProgress(page)).xp).toBe(120);
+});
+
+test('changer de profil sépare les contenus : CR et naturalisation en préparation', async ({
+  page,
+}) => {
+  await welcome(page);
+  await expect(page.locator('.profile-line')).toContainText('Carte de séjour pluriannuelle');
+  await page.goto('/#/parametres');
+  await page.getByLabel('Carte de résident', { exact: false }).click();
+  await expect.poll(async () => (await storedProgress(page)).preferences.profile).toBe('CR');
+  await page.goto('/#/accueil');
+  await expect(page.locator('.profile-line')).toContainText('Carte de résident');
+  await expect(page.getByText('est en préparation')).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Commencer mon parcours' })).toBeDisabled();
+  await page.goto('/#/examen');
+  await expect(
+    page.getByText('Le véritable examen blanc n’est pas encore disponible.'),
+  ).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Démarrer mon examen blanc' })).toHaveCount(0);
+  await page.goto('/#/lecon/principes_valeurs');
+  await expect(page.getByText('est en préparation')).toBeVisible();
+  await page.goto('/#/parametres');
+  await page.getByLabel('Naturalisation', { exact: false }).click();
+  await expect.poll(async () => (await storedProgress(page)).preferences.profile).toBe('NAT');
+  await page.getByLabel('Carte de séjour pluriannuelle', { exact: false }).click();
+  await expect.poll(async () => (await storedProgress(page)).preferences.profile).toBe('CSP');
+  await page.goto('/#/accueil');
+  await expect(page.getByText('est en préparation')).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Commencer mon parcours' })).toBeEnabled();
 });
 
 test('question à réponses multiples : il faut cocher toutes les bonnes réponses', async ({

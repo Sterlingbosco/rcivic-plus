@@ -1,11 +1,14 @@
-import { useApp } from '../app-context';
-import { questions, officialQuestions, situations, officialCorpusTotal } from '../data/content';
+import { useApp, useProfile } from '../app-context';
+import { profileInfo } from '../domain/profiles';
 import { EXAM_RULES, selectExamQuestions } from '../domain/quiz';
 import { Icon } from '../components/Icon';
 import { PageHeading, SourceLink } from '../components/Primitives';
 
 export function Exam() {
   const { startSession, saving } = useApp();
+  const content = useProfile();
+  const info = profileInfo(content.profile);
+  const { official: officialQuestions, situations } = content;
   const available =
     officialQuestions.length >= EXAM_RULES.knowledge && situations.length >= EXAM_RULES.situations;
   return (
@@ -13,7 +16,7 @@ export function Exam() {
       <PageHeading
         eyebrow="SE PRÉPARER AUX CONDITIONS DE L’EXAMEN"
         title={`Un objectif clair : ${EXAM_RULES.target} sur ${EXAM_RULES.questions}.`}
-        description="Une simulation pédagogique, jamais une reproduction garantie des questions de votre examen."
+        description={`Profil : ${info.name}. Une simulation pédagogique, jamais une reproduction garantie des questions de votre examen.`}
       />
       <section className="exam-intro card">
         <span className="icon-tile large blue">
@@ -43,7 +46,7 @@ export function Exam() {
           <li>En examen blanc : aucun feedback ni XP par réponse.</li>
           <li>Navigation séquentielle ; le résultat et les recommandations arrivent à la fin.</li>
         </ul>
-        <SourceLink id="exam-rules" />
+        <SourceLink id={content.profile === 'NAT' ? 'nat-exam' : 'exam-rules'} />
         {available ? (
           <>
             <div className="notice">
@@ -55,13 +58,13 @@ export function Exam() {
                 situations officielles non publiées. Ce lot contient {officialQuestions.length}{' '}
                 connaissances vérifiées : chaque examen en tire {EXAM_RULES.knowledge}, avec un
                 ordre et des choix mélangés. Un score élevé ne prouve pas la maîtrise des{' '}
-                {officialCorpusTotal} connaissances du corpus CSP.
+                {content.officialTotal} connaissances de la liste officielle ({info.shortName}).
               </p>
             </div>
             <button
               className="button button-primary"
               disabled={saving}
-              onClick={() => void startSession(selectExamQuestions(questions), 'exam')}
+              onClick={() => void startSession(selectExamQuestions(content.all), 'exam')}
             >
               Démarrer mon examen blanc
               <Icon name="arrow" size={18} />
@@ -73,10 +76,12 @@ export function Exam() {
             <div>
               <strong>Le véritable examen blanc n’est pas encore disponible.</strong>
               <p>
-                Ce premier lot comporte {officialQuestions.length} connaissances et{' '}
-                {situations.length} situations d’entraînement. Il faut au moins{' '}
-                {EXAM_RULES.knowledge} connaissances et {EXAM_RULES.situations} situations
-                distinctes vérifiées. Nous ne remplissons pas un faux examen avec des répétitions.
+                {officialQuestions.length
+                  ? `Pour le profil ${info.shortName}, ce lot comporte ${officialQuestions.length} connaissances et ${situations.length} situations d’entraînement.`
+                  : `Le contenu du profil ${info.shortName} est en préparation : aucun énoncé n’est encore publié.`}{' '}
+                Il faut au moins {EXAM_RULES.knowledge} connaissances et {EXAM_RULES.situations}{' '}
+                situations distinctes vérifiées. Nous ne remplissons pas un faux examen avec des
+                répétitions.
               </p>
               <a className="button button-primary" href="#/themes">
                 Commencer par les notions disponibles

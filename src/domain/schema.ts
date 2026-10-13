@@ -7,6 +7,8 @@ export const themeSchema = z.enum([
   'histoire_culture',
   'vie_societe',
 ]);
+/** Profil d'examen civique : mention du ministère (CSP, CR) ou naturalisation. */
+export const profileSchema = z.enum(['CSP', 'CR', 'NAT']);
 const text = z.string().trim().min(1).max(4000);
 const instant = z.string().datetime();
 const day = z
@@ -34,7 +36,7 @@ export const sourceSchema = z
 export const questionSchema = z
   .object({
     id: text,
-    level: z.literal('CSP'),
+    level: profileSchema,
     theme: themeSchema,
     subtheme: text,
     type: z.enum(['QUESTION_OFFICIELLE', 'QUESTION_PEDAGOGIQUE', 'EXERCICE_ENTRAINEMENT']),
@@ -132,9 +134,17 @@ export const historySchema = z
     score: z.number().int().nonnegative(),
     total: z.number().int().positive(),
     finishedAt: instant,
+    profile: profileSchema.default('CSP'),
   })
   .strict()
   .refine((entry) => entry.score <= entry.total);
+const examSummarySchema = z
+  .object({
+    count: z.number().int().nonnegative(),
+    totalScore: z.number().int().nonnegative(),
+    bestScore: z.number().int().min(0).max(40),
+  })
+  .strict();
 export const progressSchema = z
   .object({
     version: z.literal(1),
@@ -145,25 +155,25 @@ export const progressSchema = z
     questionStats: z.record(questionStatsSchema),
     history: z.array(historySchema).max(50),
     earnedBadges: z.array(text).default([]),
-    examSummary: z
-      .object({
-        count: z.number().int().nonnegative(),
-        totalScore: z.number().int().nonnegative(),
-        bestScore: z.number().int().min(0).max(40),
-      })
-      .strict()
-      .default({ count: 0, totalScore: 0, bestScore: 0 }),
+    // Ancien format (avant les profils) : un seul résumé, qui concernait le profil CSP.
+    examSummary: z.preprocess(
+      (value) => (value && typeof value === 'object' && 'count' in value ? { CSP: value } : value),
+      z.record(profileSchema, examSummarySchema).default({}),
+    ),
     preferences: z
       .object({
         dailyGoal: z.union([z.literal(5), z.literal(10), z.literal(20), z.literal(30)]),
         audioRate: z.union([z.literal(0.8), z.literal(1), z.literal(1.2)]),
         onboarded: z.boolean(),
+        profile: profileSchema.default('CSP'),
       })
       .strict(),
     activeSession: sessionSchema.nullable(),
   })
   .strict();
 export type ThemeId = z.infer<typeof themeSchema>;
+export type Profile = z.infer<typeof profileSchema>;
+export type ExamSummary = z.infer<typeof examSummarySchema>;
 export type Question = z.infer<typeof questionSchema>;
 export type Source = z.infer<typeof sourceSchema>;
 export type QuestionStats = z.infer<typeof questionStatsSchema>;

@@ -3,7 +3,10 @@ import { updateQuestionStats } from './review';
 import { isCorrectAnswer } from './answers';
 import { getResult } from './quiz';
 import {
+  profileSchema,
   themeSchema,
+  type ExamSummary,
+  type Profile,
   type Progress,
   type Question,
   type QuizMode,
@@ -20,8 +23,8 @@ export function createProgress(): Progress {
     questionStats: {},
     history: [],
     earnedBadges: [],
-    examSummary: { count: 0, totalScore: 0, bestScore: 0 },
-    preferences: { dailyGoal: 10, audioRate: 1, onboarded: false },
+    examSummary: {},
+    preferences: { dailyGoal: 10, audioRate: 1, onboarded: false, profile: 'CSP' },
     activeSession: null,
   };
 }
@@ -115,12 +118,21 @@ export function completeSession(
     event,
     session.mode === 'exam' && result.total === 40 ? 100 : session.mode === 'review' ? 15 : 0,
   );
+  const profile = session.questions[0]?.level ?? 'CSP';
+  const previous: ExamSummary = updated.examSummary[profile] ?? {
+    count: 0,
+    totalScore: 0,
+    bestScore: 0,
+  };
   const examSummary =
     session.mode === 'exam' && result.total === 40
       ? {
-          count: updated.examSummary.count + 1,
-          totalScore: updated.examSummary.totalScore + result.score,
-          bestScore: Math.max(updated.examSummary.bestScore, result.score),
+          ...updated.examSummary,
+          [profile]: {
+            count: previous.count + 1,
+            totalScore: previous.totalScore + result.score,
+            bestScore: Math.max(previous.bestScore, result.score),
+          },
         }
       : updated.examSummary;
   return preserveBadges(
@@ -136,6 +148,7 @@ export function completeSession(
           score: result.score,
           total: result.total,
           finishedAt: session.finishedAt!,
+          profile,
         },
       ].slice(-50),
     },
@@ -155,7 +168,7 @@ export function getStreak(activityDays: string[], now = new Date()) {
   return streak;
 }
 
-export function getStatistics(progress: Progress, questions: Question[]) {
+export function getStatistics(progress: Progress, questions: Question[], profile: Profile) {
   const entries = questions
     .map((question) => ({ question, stat: progress.questionStats[question.id] }))
     .filter((entry) => entry.stat !== undefined);
@@ -175,7 +188,7 @@ export function getStatistics(progress: Progress, questions: Question[]) {
       coverage: total ? Math.round((themeEntries.length / total) * 100) : 0,
     };
   });
-  const exams = progress.examSummary;
+  const exams = progress.examSummary[profile] ?? { count: 0, totalScore: 0, bestScore: 0 };
   return {
     seen,
     attempts,
@@ -204,10 +217,14 @@ export function getBadges(progress: Progress, now = new Date()) {
       histoire_culture: 'HG',
       vie_societe: 'VS',
     }[theme];
-    const mastery = Object.entries(progress.questionStats)
-      .filter(([id]) => id.startsWith(`CSP-${prefix}-`))
-      .reduce((sum, [, stat]) => sum + stat.mastery, 0);
-    if (mastery / officialThemeTotals[theme] >= 0.9) unlocked.push(theme);
+    for (const profile of profileSchema.options) {
+      const total = officialThemeTotals[profile][theme];
+      if (!total) continue;
+      const mastery = Object.entries(progress.questionStats)
+        .filter(([id]) => id.startsWith(`${profile}-${prefix}-`))
+        .reduce((sum, [, stat]) => sum + stat.mastery, 0);
+      if (mastery / total >= 0.9) unlocked.push(theme);
+    }
   }
   if (
     progress.history.some(

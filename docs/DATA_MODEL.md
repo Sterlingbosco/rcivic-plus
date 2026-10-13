@@ -2,7 +2,7 @@
 
 ## Question publiée
 
-`id` stable CSP-TH-NNN ; `level: CSP` ; `theme` parmi principes_valeurs, institutions, droits_devoirs, histoire_culture, vie_societe ; `subtheme` ; `type` parmi QUESTION_OFFICIELLE et EXERCICE_ENTRAINEMENT ; `question` ; quatre `answers` distinctes ; `correctAnswer` entier 0..3 ; `explanation`, `keyPoint` ; `explanationType: CONTENU_PEDAGOGIQUE` ; `choicesType: EXERCICE_ENTRAINEMENT` ; `sourceId` de l’énoncé pour une question officielle ; `answerSourceId` ; `status: source_checked` ; `humanReviewed: false` tant que la revue humaine n’est pas attestée.
+`id` stable PROFIL-TH-NNN (CSP-PV-001, CR-SI-004…) ; `level` = profil d’examen parmi CSP, CR, NAT (naturalisation) ; `theme` parmi principes_valeurs, institutions, droits_devoirs, histoire_culture, vie_societe ; `subtheme` ; `type` parmi QUESTION_OFFICIELLE, QUESTION_PEDAGOGIQUE (reformulation, sans `sourceId`) et EXERCICE_ENTRAINEMENT ; `question` ; quatre `answers` distinctes ; `correctAnswer` entier 0..3, et `correctAnswers` (2 à 3 indices) pour une question à réponses multiples (`correctAnswer` = le plus petit) ; `extraSourceIds` pour des sources supplémentaires ; `explanation`, `keyPoint` ; `explanationType: CONTENU_PEDAGOGIQUE` ; `choicesType: EXERCICE_ENTRAINEMENT` ; `sourceId` de l’énoncé pour une question officielle ; `answerSourceId` ; `status: source_checked` ; `humanReviewed: false` tant que la revue humaine n’est pas attestée.
 
 Les questions officielles utilisent exactement l’énoncé publié, à la normalisation des espaces près. La source vérifie une connaissance, elle ne fournit pas nécessairement un corrigé. `source_checked` signifie vérification documentaire et non certification ministérielle ou validation humaine.
 
@@ -25,3 +25,7 @@ Copie textuelle du DOCX intégral, empreinte SHA-256, 189 réponses réparties s
 ## Validation
 
 Schémas Zod stricts aux frontières du corpus et d’IndexedDB ; contrôle des références et unicité des IDs, quatre choix distincts, thèmes/types, réponse, dates, explications et correspondance avec les énoncés officiels. `npm run validate:data` doit échouer en présence de toute anomalie.
+
+## Progression
+
+`preferences.profile` (CSP par défaut) désigne le profil actif. `examSummary` est un enregistrement par profil ; chaque entrée d’`history` porte son `profile`. XP, série et badges sont communs à tous les profils. Les sauvegardes antérieures aux profils sont migrées à la lecture (résumé et historique rattachés à CSP).

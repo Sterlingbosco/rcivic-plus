@@ -1,14 +1,16 @@
-import { navigate, useApp } from '../app-context';
-import { questionsForTheme, themes } from '../data/content';
+import { navigate, useApp, useProfile } from '../app-context';
+import { themes } from '../data/content';
+import { PendingProfile } from '../components/PendingProfile';
 import type { ThemeId } from '../domain/schema';
 import { Icon } from '../components/Icon';
 import { PageHeading, ProgressBar } from '../components/Primitives';
 
 export function Themes({ themeId }: { themeId?: ThemeId }) {
   const { progress, startSession, saving } = useApp();
+  const content = useProfile();
   const selected = themes.find((theme) => theme.id === themeId);
   if (selected) {
-    const pool = questionsForTheme(selected.id);
+    const pool = content.forTheme(selected.id);
     const completed = pool.filter((question) => progress.understood.includes(question.id)).length;
     return (
       <>
@@ -32,7 +34,7 @@ export function Themes({ themeId }: { themeId?: ThemeId }) {
             rythme.
           </p>
           <ProgressBar
-            value={Math.round((completed / pool.length) * 100)}
+            value={pool.length ? Math.round((completed / pool.length) * 100) : 0}
             label="Notions comprises de cette unité"
           />
           <p className="muted">
@@ -41,6 +43,7 @@ export function Themes({ themeId }: { themeId?: ThemeId }) {
           <div className="button-row">
             <button
               className="button button-primary"
+              disabled={!pool.length}
               onClick={() => navigate(`lecon/${selected.id}`)}
             >
               Apprendre cette unité
@@ -48,7 +51,7 @@ export function Themes({ themeId }: { themeId?: ThemeId }) {
             </button>
             <button
               className="button button-secondary"
-              disabled={saving}
+              disabled={saving || !pool.length}
               onClick={() => void startSession(pool, 'training')}
             >
               M’entraîner directement
@@ -92,6 +95,7 @@ export function Themes({ themeId }: { themeId?: ThemeId }) {
         title="Une notion à la fois."
         description="Choisissez un thème. Comprenez d’abord, pratiquez ensuite."
       />
+      {!content.official.length && <PendingProfile profile={content.profile} />}
       <div className="themes-list">
         {themes.map((theme) => (
           <a className="theme-list-card" href={`#/theme/${theme.id}`} key={theme.id}>
@@ -100,7 +104,7 @@ export function Themes({ themeId }: { themeId?: ThemeId }) {
             </span>
             <div>
               <span className="eyebrow">
-                {questionsForTheme(theme.id).length} NOTIONS DISPONIBLES
+                {content.forTheme(theme.id).length} NOTIONS DISPONIBLES
               </span>
               <h2>{theme.name}</h2>
               <p>{theme.description}</p>

@@ -1018,5 +1018,25 @@
     "updatedAt": null,
     "license": "Référence factuelle ; aucun visuel repris",
     "type": "institutional"
+  },
+  {
+    "id": "cr-list",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Liste officielle des questions de connaissance — CR",
+    "url": "https://formation-civique.interieur.gouv.fr/examen-civique/liste-officielle-des-questions-de-connaissance-cr/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-exam",
+    "organization": "Ministère de la Justice",
+    "title": "Naturalisation française : passer l’examen civique",
+    "url": "https://www.justice.fr/fiche/naturalisation-francaise-passer-lexamen-civique",
+    "checkedAt": "2026-10-13",
+    "updatedAt": "2026-04-15",
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
   }
 ]

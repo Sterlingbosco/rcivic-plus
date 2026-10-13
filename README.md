@@ -8,6 +8,7 @@ Application web de **préparation pédagogique à l'examen civique** français (
 
 ## Fonctionnalités
 
+- Un profil par examen : **carte de séjour pluriannuelle (CSP)**, **carte de résident (CR)** et **naturalisation**. Leçons, entraînement, révision, examen blanc et statistiques suivent le profil choisi.
 - Cinq thèmes de l'examen : principes et valeurs, institutions, droits et devoirs, histoire et culture, vie en société.
 - Leçons, quiz avec correction bienveillante, réponses multiples (cocher toutes les bonnes réponses), révision intelligente des erreurs, répétition espacée.
 - Examen blanc : 28 questions de connaissance + 12 mises en situation, 45 minutes, seuil 32/40, sans correction avant la fin.
@@ -41,7 +42,9 @@ Le fonctionnement hors connexion est vérifié par des tests automatisés sur na
 
 ## État du contenu
 
-178 des 191 énoncés officiels extraits sont publiés avec une réponse vérifiée sur une source institutionnelle (fiches de formation-civique.interieur.gouv.fr en priorité, puis Service Public, BnF, Légifrance, etc.). Les 13 autres attendent une source lisible ou un arbitrage éditorial. Toutes les réponses restent à relire par un humain (`humanReviewed: false`).
+**Profil CSP** : 178 des 191 énoncés officiels extraits sont publiés avec une réponse vérifiée sur une source institutionnelle (fiches de formation-civique.interieur.gouv.fr en priorité, puis Service Public, BnF, Légifrance, etc.). Les 13 autres attendent une source lisible ou un arbitrage éditorial. Toutes les réponses restent à relire par un humain (`humanReviewed: false`).
+
+**Profils CR et naturalisation** : la structure est en place, mais leur liste officielle (188 énoncés pour la CR) n'est pas encore intégrée ; ces profils affichent « contenu en préparation » plutôt que de reprendre des questions d'un autre niveau.
 
 Détail et limites : [PROJECT_STATUS.md](PROJECT_STATUS.md) et [docs/SOURCES.md](docs/SOURCES.md).
 
