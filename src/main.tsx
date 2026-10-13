@@ -5,6 +5,8 @@ import { registerPwa } from './platform/pwa';
 import './styles/tokens.css';
 import './styles/components.css';
 import './styles/screens.css';
+import './styles/dark.css';
+import { applyTheme, getThemePreference } from './platform/theme';
 
 class ErrorBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
   state = { failed: false };
@@ -28,6 +30,7 @@ class ErrorBoundary extends Component<{ children: ReactNode }, { failed: boolean
 
 const root = document.getElementById('root');
 if (!root) throw new Error('Racine de l’application absente.');
+applyTheme(getThemePreference());
 createRoot(root).render(
   <ErrorBoundary>
     <App />

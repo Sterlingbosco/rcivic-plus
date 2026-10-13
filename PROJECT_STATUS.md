@@ -13,6 +13,7 @@ Validation du lot introductif enrichi CSP (RCIVIC+ 0.2.0) : 11 octobre 2026. Les
 - [x] gamification — XP idempotents, niveaux d’expérience, séries et dix badges présentés ; badges acquis conservés
 - [x] examen blanc — 40 questions distinctes tirées du corpus publié (28 connaissances parmi 178 + 12 exercices), 45 minutes, seuil 32/40 ; sans feedback/XP avant la fin ; reprise, résultats par thème, recommandations et corrections finales vérifiés sur mobile
 - [x] statistiques — couverture du lot, précision, tentatives, thèmes, historique et agrégats d’examens
+- [x] mode sombre — thème automatique (préférence système) ou réglé dans Paramètres › Apparence (clair / sombre, mémorisé localement) ; toutes les couleurs passent par des variables CSS (`tokens.css`), valeurs sombres dans `dark.css` ; contraste AA du texte contrôlé automatiquement sur dix écrans dans les deux thèmes (`tests/contrast-scan.spec.ts`), pas d’audit humain
 - [x] PWA — manifest, icônes PNG 192/512, service worker versionné ; rechargement, apprentissage et sauvegarde hors connexion testés après premier chargement
 - [x] accessibilité — contrôles initiaux clavier, focus, radios, cibles tactiles, contrastes des contrôles, animations réduites et texte à 200 % ; conformité WCAG complète non certifiée
 - [x] tests — 21 tests unitaires/de données et 14 tests Chromium passent ; lint, types, format, corpus, build et npm audit validés

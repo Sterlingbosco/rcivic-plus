@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useApp } from '../app-context';
 import { exportProgress } from '../platform/storage';
+import { getThemePreference, setThemePreference, type ThemePreference } from '../platform/theme';
 import { Icon } from '../components/Icon';
 import { PageHeading } from '../components/Primitives';
 
@@ -12,6 +13,7 @@ type InstallPrompt = Event & {
 export function Settings() {
   const { progress, commit, saving } = useApp();
   const [install, setInstall] = useState<InstallPrompt | null>(null);
+  const [theme, setTheme] = useState<ThemePreference>(getThemePreference);
   useEffect(() => {
     const ready = (event: Event) => {
       event.preventDefault();
@@ -60,6 +62,36 @@ export function Settings() {
                 }
               />
               {goal} min
+            </label>
+          ))}
+        </fieldset>
+      </section>
+      <section className="card settings-card">
+        <h2>Apparence</h2>
+        <p>Automatique suit le réglage clair ou sombre de votre appareil.</p>
+        <fieldset className="setting-options">
+          <legend className="sr-only">Thème d’affichage</legend>
+          {(
+            [
+              ['auto', 'Automatique'],
+              ['light', 'Clair'],
+              ['dark', 'Sombre'],
+            ] as const
+          ).map(([value, label]) => (
+            <label
+              className={theme === value ? 'setting-option selected' : 'setting-option'}
+              key={value}
+            >
+              <input
+                type="radio"
+                name="theme"
+                checked={theme === value}
+                onChange={() => {
+                  setTheme(value);
+                  setThemePreference(value);
+                }}
+              />
+              {label}
             </label>
           ))}
         </fieldset>

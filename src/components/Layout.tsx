@@ -103,7 +103,11 @@ export function Layout({ route, children }: { route: string; children: ReactNode
             RCIVIC<span>+</span>
           </a>
           <span className="topbar-label">
-            Mon parcours <span className="divider">/</span> <strong>Examen civique CSP</strong>
+            Mon parcours{' '}
+            <span className="divider" aria-hidden="true">
+              /
+            </span>{' '}
+            <strong>Examen civique CSP</strong>
           </span>
           <div className="topbar-stats">
             <span className="connection-status">
