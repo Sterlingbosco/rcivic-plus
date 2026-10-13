@@ -236,33 +236,41 @@ test('une ancienne sauvegarde sans profil s’ouvre en profil CSP, sans perte', 
   expect((await storedProgress(page)).xp).toBe(120);
 });
 
-test('changer de profil sépare les contenus : CR et naturalisation en préparation', async ({
-  page,
-}) => {
+test('chaque profil a son contenu, son examen blanc et sa progression', async ({ page }) => {
+  test.setTimeout(120_000);
   await welcome(page);
   await expect(page.locator('.profile-line')).toContainText('Carte de séjour pluriannuelle');
+  // La session d'un profil précédent encore en cours doit être remplacée explicitement.
+  page.on('dialog', (dialog) => void dialog.accept());
+  const firstCard = () => page.locator('.theme-card').first();
+  const total = (profile: 'CSP' | 'CR' | 'NAT') =>
+    profileContent(profile).forTheme('principes_valeurs').length;
+  await expect(firstCard()).toContainText(`0/${total('CSP')} notions comprises`);
+  for (const [profile, label] of [
+    ['CR', 'Carte de résident'],
+    ['NAT', 'Naturalisation'],
+  ] as const) {
+    await page.goto('/#/parametres');
+    await page.getByLabel(label, { exact: false }).click();
+    await expect.poll(async () => (await storedProgress(page)).preferences.profile).toBe(profile);
+    await page.goto('/#/accueil');
+    await expect(page.locator('.profile-line')).toContainText(label);
+    await expect(page.getByText('est en préparation')).toHaveCount(0);
+    await expect(firstCard()).toContainText(`0/${total(profile)} notions comprises`);
+    await page.goto('/#/examen');
+    await page.getByRole('button', { name: 'Démarrer mon examen blanc' }).click();
+    await expect(page.getByText('QUESTION 1 / 40', { exact: true })).toBeVisible();
+    const session = (await storedProgress(page)).activeSession!;
+    expect(session.questions).toHaveLength(40);
+    expect(session.questions.every((question) => question.level === profile)).toBe(true);
+    expect(session.questions.filter((q) => q.type === 'QUESTION_OFFICIELLE')).toHaveLength(28);
+    expect(session.questions.filter((q) => q.type === 'EXERCICE_ENTRAINEMENT')).toHaveLength(12);
+  }
   await page.goto('/#/parametres');
-  await page.getByLabel('Carte de résident', { exact: false }).click();
-  await expect.poll(async () => (await storedProgress(page)).preferences.profile).toBe('CR');
-  await page.goto('/#/accueil');
-  await expect(page.locator('.profile-line')).toContainText('Carte de résident');
-  await expect(page.getByText('est en préparation')).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Commencer mon parcours' })).toBeDisabled();
-  await page.goto('/#/examen');
-  await expect(
-    page.getByText('Le véritable examen blanc n’est pas encore disponible.'),
-  ).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Démarrer mon examen blanc' })).toHaveCount(0);
-  await page.goto('/#/lecon/principes_valeurs');
-  await expect(page.getByText('est en préparation')).toBeVisible();
-  await page.goto('/#/parametres');
-  await page.getByLabel('Naturalisation', { exact: false }).click();
-  await expect.poll(async () => (await storedProgress(page)).preferences.profile).toBe('NAT');
   await page.getByLabel('Carte de séjour pluriannuelle', { exact: false }).click();
   await expect.poll(async () => (await storedProgress(page)).preferences.profile).toBe('CSP');
   await page.goto('/#/accueil');
-  await expect(page.getByText('est en préparation')).toHaveCount(0);
-  await expect(page.getByRole('button', { name: 'Commencer mon parcours' })).toBeEnabled();
+  await expect(firstCard()).toContainText(`0/${total('CSP')} notions comprises`);
 });
 
 test('question à réponses multiples : il faut cocher toutes les bonnes réponses', async ({

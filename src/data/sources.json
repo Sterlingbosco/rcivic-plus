@@ -1048,5 +1048,1035 @@
     "updatedAt": null,
     "license": "Etalab 2.0, sauf contenus tiers signalés",
     "type": "institutional"
+  },
+  {
+    "id": "cr-dd1-charte",
+    "organization": "Conseil constitutionnel",
+    "title": "Charte de l’environnement de 2004",
+    "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/charte-de-l-environnement-de-2004",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-dd1-amp",
+    "organization": "Assurance Maladie (ameli)",
+    "title": "Qu’est-ce que l’assistance médicale à la procréation (AMP) ?",
+    "url": "https://www.ameli.fr/assure/sante/devenir-parent/concevoir-un-enfant/procreation-medicalement-assistee-pma-amp/qu-est-ce-que-l-assistance-medicale-la-procreation-amp",
+    "checkedAt": "2026-10-13",
+    "updatedAt": "2025-09-30",
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-dd1-greve",
+    "organization": "Service-Public.fr",
+    "title": "Chronologie du droit de grève en France de 1791 à nos jours",
+    "url": "https://www.service-public.gouv.fr/particuliers/actualites/A16326",
+    "checkedAt": "2026-10-13",
+    "updatedAt": "2023-01-19",
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-hc1-rep1",
+    "organization": "Ministère de l’Intérieur – Formation civique",
+    "title": "La Ière République (1792-1804)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-premiere-republique-1792-1804/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-hc1-louis14",
+    "organization": "Bibliothèque nationale de France",
+    "title": "Louis XIV | BnF Essentiels",
+    "url": "https://essentiels.bnf.fr/fr/album/6ce554e6-8dd8-464c-8863-deeeec98cc88-louis-xiv-1",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-hc1-femmes",
+    "organization": "Assemblée nationale",
+    "title": "21 avril 1944 - L’accession des femmes au droit de vote - Assemblée nationale",
+    "url": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/deuxieme-guerre-mondiale/l-accession-des-femmes-au-droit-de-vote",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-hc1-euro",
+    "organization": "Banque de France",
+    "title": "Le Bulletin de la Banque de France n°242 : Article 2 L’euro : dans nos poches depuis vingt ans",
+    "url": "https://publications.banque-france.fr/leuro-dans-nos-poches-depuis-vingt-ans",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-hc1-onu",
+    "organization": "Nations Unies",
+    "title": "La Charte des Nations Unies | Nations Unies",
+    "url": "https://www.un.org/fr/about-us/un-charter",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-hc1-cc62",
+    "organization": "Conseil constitutionnel",
+    "title": "Loi n° 62-1292 du 6 novembre 1962",
+    "url": "https://www.conseil-constitutionnel.fr/les-revisions-constitutionnelles/loi-n-62-1292-du-6-novembre-1962",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-hc1-moulin",
+    "organization": "Ministère des Armées",
+    "title": "Jean Moulin | Ministère des Armées et des Anciens combattants",
+    "url": "https://www.defense.gouv.fr/chemins-memoire/histoire-memoires/personnalites/personnalites-lettre-e-lettre-m/jean-moulin",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-hc1-algerie",
+    "organization": "Bibliothèque nationale de France",
+    "title": "Conquête et colonisation de l’Algérie",
+    "url": "https://essentiels.bnf.fr/fr/mot-cle/907402b4-e385-420f-bb0a-4e22fff4ef46-conquete-et-colonisation-lalgerie",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-hc1-elysee",
+    "organization": "Élysée",
+    "title": "Electing presidents of the French Republic",
+    "url": "https://www.elysee.fr/en/french-presidency/electing-presidents-of-the-french-republic",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-hc2-reunion",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La Réunion — Formation civique",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/la-reunion/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-hc2-mayotte",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Mayotte — Formation civique",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/mayotte/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-hc2-idf",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Île-de-France — Formation civique",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/ile-de-france/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-hc2-tourisme",
+    "organization": "Direction générale des Entreprises",
+    "title": "Le secteur du tourisme en France | Direction générale des Entreprises",
+    "url": "https://www.entreprises.gouv.fr/secteurs-dactivite/le-secteur-du-tourisme-en-france",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-hc2-nd",
+    "organization": "Ministère de la Culture",
+    "title": "Le récit en images | Notre-Dame de Paris",
+    "url": "https://notre-dame-de-paris.culture.gouv.fr/fr/le-recit-en-images",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-hc2-yourcenar",
+    "organization": "Académie française",
+    "title": "Hommage prononcé à l’occasion du décès de Mme Marguerite Yourcenar | Académie française",
+    "url": "https://www.academie-francaise.fr/hommage-prononce-loccasion-du-deces-de-mme-marguerite-yourcenar",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-hc2-renoir",
+    "organization": "Bibliothèque nationale de France",
+    "title": "Auguste Renoir | BnF Essentiels",
+    "url": "https://essentiels.bnf.fr/fr/mot-cle/c5853deb-443a-4029-9381-81f5f9a414eb-auguste-renoir",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-pv1-marseillaise",
+    "organization": "Assemblée nationale",
+    "title": "Les paroles de la Marseillaise",
+    "url": "https://www2.assemblee-nationale.fr/decouvrir-l-assemblee/histoire/dossier-historique-la-marseillaise/les-paroles-de-la-marseillaise",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-pv1-impot",
+    "organization": "Ministère de l’Intérieur",
+    "title": "L’impôt en France et la déclaration de revenus",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/l-impot-en-france-et-la-declaration-de-revenus/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-pv1-egalite3",
+    "organization": "Ministère de l’Intérieur",
+    "title": "L’égalité (3/3)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/egalite-3/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-pv2-fraternite2",
+    "organization": "Ministère de l’Intérieur – Formation civique",
+    "title": "La fraternité (2/2)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/fraternite-2/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-pv2-services",
+    "organization": "Ministère de l’Intérieur – Formation civique",
+    "title": "La laïcité dans les services publics",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-laicite-dans-les-services-publics/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-si1-gouv",
+    "organization": "Conseil constitutionnel",
+    "title": "Quelle est la place du Gouvernement ?",
+    "url": "https://www.conseil-constitutionnel.fr/la-constitution/quelle-est-la-place-du-gouvernement",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-si2-symboles1",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Les symboles européens (1/2)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-symboles-europeens-1/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-si2-ddd",
+    "organization": "Défenseur des droits",
+    "title": "Découvrir le Défenseur des droits",
+    "url": "https://www.defenseurdesdroits.fr/decouvrir-le-defenseur-des-droits-197",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-si2-pe",
+    "organization": "Parlement européen",
+    "title": "Le Parlement européen: organisation et fonctionnement",
+    "url": "https://www.europarl.europa.eu/factsheets/fr/sheet/20/le-parlement-europeen-organisation-et-fonctionnement",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-si2-commission",
+    "organization": "Union européenne",
+    "title": "Commission européenne",
+    "url": "https://european-union.europa.eu/institutions-law-budget/institutions-and-bodies/search-all-eu-institutions-and-bodies/european-commission_fr",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-vs1-ecole",
+    "organization": "Service-Public.fr (DILA)",
+    "title": "Inscrire son enfant à l’école primaire (élémentaire)",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1865",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-vs1-aj",
+    "organization": "Service-Public.fr (DILA)",
+    "title": "Aide juridictionnelle lors d’une procédure en France",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F18074",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-vs1-permis",
+    "organization": "Service-Public.fr (DILA)",
+    "title": "Permis B : voiture ou camionnette",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2828",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-vs1-cpe",
+    "organization": "Service-Public.fr (DILA)",
+    "title": "Congé parental d’éducation à temps plein pour un salarié du secteur privé",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2280",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-vs1-cph",
+    "organization": "Justice.fr (ministère de la Justice)",
+    "title": "Le conseil de prud’hommes",
+    "url": "https://www.justice.fr/themes/cph",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-vs1-dechets",
+    "organization": "ADEME",
+    "title": "Que faire de mon gros électroménager ?",
+    "url": "https://quefairedemesdechets.ademe.fr/dechet/lave-vaisselle/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-vs1-bail",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Les démarches relatives au logement (1/2)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-soci%C3%A9t%C3%A9-fran%C3%A7aise/demarches-administratives/les-demarches-relatives-au-logement-1/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-vs1-autorite",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Exercice de l’autorité parentale (1/2)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-soci%C3%A9t%C3%A9-fran%C3%A7aise/parentalite/exercice-de-l-autorite-parentale-1/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-vs1-patient",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Santé : les droits et les devoirs du patient",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-soci%C3%A9t%C3%A9-fran%C3%A7aise/sante/sante-les-droits-du-patient/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-vs2-droit1",
+    "organization": "Ministère de l’Intérieur – Formation civique",
+    "title": "Le droit du travail (1/5)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-soci%C3%A9t%C3%A9-fran%C3%A7aise/emploi/le-droit-au-travail-1/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-vs2-droit2",
+    "organization": "Ministère de l’Intérieur – Formation civique",
+    "title": "Le droit du travail (2/5)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-soci%C3%A9t%C3%A9-fran%C3%A7aise/emploi/le-droit-au-travail-2/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-vs2-greve",
+    "organization": "Service-Public.fr",
+    "title": "Droit de grève d’un salarié du secteur privé",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F117",
+    "checkedAt": "2026-10-13",
+    "updatedAt": "2026-08-10",
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-vs2-ft",
+    "organization": "France Travail",
+    "title": "France Travail et vous",
+    "url": "https://www.francetravail.fr/candidat/pole-emploi-et-vous.html",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-vs2-ft2",
+    "organization": "France Travail",
+    "title": "Vos droits et vos engagements",
+    "url": "https://www.francetravail.fr/candidat/pole-emploi-et-vous/vos-droits-et-vos-engagements.html",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-vs2-are",
+    "organization": "Service-Public.fr",
+    "title": "Allocation chômage d’aide au retour à l’emploi (ARE) d’un salarié du secteur privé dont la fin de contrat de travail intervient à compter du 1er avril 2025",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F38881",
+    "checkedAt": "2026-10-13",
+    "updatedAt": "2026-07-23",
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-vs2-educatif",
+    "organization": "Ministère de l’Intérieur – Formation civique",
+    "title": "Le système éducatif",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-soci%C3%A9t%C3%A9-fran%C3%A7aise/parentalite/le-systeme-educatif/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-vs2-parents",
+    "organization": "Ministère de l’Intérieur – Formation civique",
+    "title": "Les devoirs et le rôle des parents à l’école",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-soci%C3%A9t%C3%A9-fran%C3%A7aise/parentalite/droits-et-devoirs-des-parents-a-l-ecole/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-vs2-cantine",
+    "organization": "Service-Public.fr",
+    "title": "Cantine scolaire à l’école primaire (maternelle et élémentaire)",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F24570",
+    "checkedAt": "2026-10-13",
+    "updatedAt": "2025-05-20",
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-vs2-cc414",
+    "organization": "Légifrance",
+    "title": "Article 414 - Code civil",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006427400",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-vs2-vacances",
+    "organization": "Service-Public.fr",
+    "title": "Quel est le calendrier des vacances scolaires 2026-2027 et 2027-2028 ?",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31952",
+    "checkedAt": "2026-10-13",
+    "updatedAt": "2026-09-02",
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "cr-vs2-handicap",
+    "organization": "Service-Public.fr",
+    "title": "Handicap : scolarisation en école primaire (maternelle et élémentaire) - Élémentaire",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F35025/1",
+    "checkedAt": "2026-10-13",
+    "updatedAt": "2024-11-19",
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-dd2-permis",
+    "organization": "Service-Public.fr",
+    "title": "Amende forfaitaire en cas de délit de conduite sans permis",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F17698",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-dd2-refus",
+    "organization": "Justice.fr",
+    "title": "Peut-on refuser d’être juré devant la cour d’assises ?",
+    "url": "https://www.justice.fr/fiche/on-refuser-jure-devant-cour-assises",
+    "checkedAt": "2026-10-13",
+    "updatedAt": "2026-03-06",
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-dd2-impot",
+    "organization": "Service-Public.fr",
+    "title": "Impôt sur le revenu - Déclaration de revenus annuelle",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F358",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-dd2-secours",
+    "organization": "Service-Public.fr",
+    "title": "Qu’est-ce que la non-assistance à personne en danger ?",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F34551",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-dd2-alcool",
+    "organization": "Justice.fr",
+    "title": "Ivresse - Alcoolisme",
+    "url": "https://www.justice.fr/fiche/ivresse-alcoolisme",
+    "checkedAt": "2026-10-13",
+    "updatedAt": "2026-04-10",
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc1-reims",
+    "organization": "Centre des monuments nationaux",
+    "title": "Comment étaient sacrés les rois de France ?",
+    "url": "https://www.monuments-nationaux.fr/magazine/dossiers-thematiques/un-peu-d-histoire/comment-etaient-sacres-les-rois-de-france",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc1-louis16",
+    "organization": "Assemblée nationale",
+    "title": "Décembre 1792 - Janvier 1793 - Procès et exécution de Louis XVI - Assemblée nationale",
+    "url": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/proces-et-execution-de-louis-xvi",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc1-esclavage",
+    "organization": "Assemblée nationale",
+    "title": "27 avril 1848 - L’abolition de l’esclavage - Assemblée nationale",
+    "url": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/deuxieme-republique/l-abolition-de-l-esclavage",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc1-plages",
+    "organization": "Ministère des Armées",
+    "title": "1944. Les Plages du Débarquement, Normandie",
+    "url": "https://www.defense.gouv.fr/chemins-memoire/histoire-memoires/ressources-historiques/seconde-guerre-mondiale/operations-militaires/1944-1945-6",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc2-onu",
+    "organization": "Ministère de l’Europe et des Affaires étrangères",
+    "title": "Anniversaire des 80 ans de la Charte des Nations unies",
+    "url": "https://jp.diplomatie.gouv.fr/fr/anniversaire-des-80-ans-de-la-charte-des-nations-unies",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc2-paris",
+    "organization": "Ministère des Armées",
+    "title": "25 août 1944. Commémoration de la Libération de Paris",
+    "url": "https://www.defense.gouv.fr/chemins-memoire/histoire-memoires/journees-nationales-commemoratives/25-aout-1944-commemoration-liberation-paris",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc2-traite",
+    "organization": "BnF",
+    "title": "« Traite des esclaves » | Patrimoines Partagés - France Amériques",
+    "url": "https://heritage.bnf.fr/france-ameriques/traite-esclaves",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc2-abolition",
+    "organization": "BnF",
+    "title": "La lutte pour l'abolition - Ressources en ligne",
+    "url": "https://www.bnf.fr/fr/la-lutte-pour-labolition-ressources-en-ligne",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc2-curie",
+    "organization": "Centre des monuments nationaux",
+    "title": "Marie Curie, une scientifique d’exception au Panthéon",
+    "url": "https://www.monuments-nationaux.fr/magazine/dossiers-thematiques/grands-personnages/marie-curie-une-scientifique-d-exception-au-pantheon",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc2-delacroix",
+    "organization": "Ministère de la Culture",
+    "title": "La révolution de juillet 1830 : \"La Liberté guidant le peuple\" d'Eugène Delacroix",
+    "url": "https://histoiredesarts.culture.gouv.fr/Toutes-les-ressources/L-Histoire-par-l-image/La-revolution-de-juillet-1830-La-Liberte-guidant-le-peuple-d-Eugene-Delacroix",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc2-versailles",
+    "organization": "Château de Versailles",
+    "title": "Louis XIV | Château de Versailles",
+    "url": "https://en.chateauversailles.fr/discover/history/great-characters/louis-xiv",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc2-prehisto",
+    "organization": "Ministère de la Culture",
+    "title": "Lascaux, Chauvet, Cosquer… comment ces découvertes ont changé notre regard sur la préhistoire",
+    "url": "https://www.culture.gouv.fr/actualites/Lascaux-Chauvet-Cosquer-comment-ces-decouvertes-ont-change-notre-regard-sur-la-prehistoire",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc2-monet",
+    "organization": "Musée de l’Orangerie",
+    "title": "Les Nymphéas de Claude Monet",
+    "url": "https://www.musee-orangerie.fr/en/node/255",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc2-jep",
+    "organization": "Ministère de la Culture",
+    "title": "Journées Européennes du Patrimoine | Ministère de la Culture",
+    "url": "https://www.culture.gouv.fr/evenements-nationaux/journees-europeennes-du-patrimoine",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc2-rouget",
+    "organization": "Élysée",
+    "title": "La Marseillaise by Rouget de Lisle | Élysée",
+    "url": "https://www.elysee.fr/en/french-presidency/la-marseillaise-by-rouget-de-lisle",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc2-eiffel",
+    "organization": "BnF",
+    "title": "La tour Eiffel",
+    "url": "https://passerelles.essentiels.bnf.fr/fr/chronologie/construction/86975eb3-9f28-4e1a-bc88-e28bbfab0a26-tour-eiffel",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc2-sand",
+    "organization": "BnF",
+    "title": "George Sand, vivre de sa plume | BnF Essentiels",
+    "url": "https://essentiels.bnf.fr/fr/article/57176f3a-7e28-48ee-a268-10c02af5abfd-george-sand-vivre-sa-plume",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc2-yourcenar",
+    "organization": "Académie française",
+    "title": "Marguerite YOURCENAR | Académie française",
+    "url": "https://www.academie-francaise.fr/les-immortels/marguerite-yourcenar",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc2-cezanne",
+    "organization": "Ministère de la Culture",
+    "title": "Atelier Cézanne - Aix-en-Provence (13) | Ministère de la Culture",
+    "url": "https://www.culture.gouv.fr/regions/drac-provence-alpes-cote-d-azur/politique-et-actions-culturelles/le-label-maison-des-illustres-en-provence-alpes-cote-d-azur/atelier-cezanne-aix-en-provence-13",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc2-rodin",
+    "organization": "Ministère de la Culture",
+    "title": "Découvrez 10 œuvres emblématiques d'Auguste Rodin | HDA",
+    "url": "https://histoiredesarts.culture.gouv.fr/Dossiers-thematiques/Decouvrez-10-aeuvres-emblematiques-d-Auguste-Rodin",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc2-debussy",
+    "organization": "Philharmonie de Paris",
+    "title": "Portrait de Claude Debussy - Philharmonie à la demande",
+    "url": "https://pad.philharmoniedeparis.fr/0051746-biographie-de-claude-debussy.aspx?_lg=fr-FR",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc2-ravel",
+    "organization": "Philharmonie de Paris",
+    "title": "Portrait de Maurice Ravel - Philharmonie à la demande",
+    "url": "https://pad.philharmoniedeparis.fr/0041014-biographie-maurice-ravel.aspx",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc3-ara",
+    "organization": "Ministère de l’Intérieur — Formation civique",
+    "title": "Auvergne-Rhône-Alpes — Formation civique",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/auvergne-rhone-alpes/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc3-bret",
+    "organization": "Ministère de l’Intérieur — Formation civique",
+    "title": "Bretagne — Formation civique",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/bretagne/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc3-guyane",
+    "organization": "Ministère de l’Intérieur — Formation civique",
+    "title": "Guyane — Formation civique",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/guyane/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc3-guadeloupe",
+    "organization": "Ministère de l’Intérieur — Formation civique",
+    "title": "Guadeloupe — Formation civique",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/guadeloupe/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc3-martinique",
+    "organization": "Ministère de l’Intérieur — Formation civique",
+    "title": "Martinique — Formation civique",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/martinique/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc3-csg",
+    "organization": "CNES",
+    "title": "Le Centre Spatial Guyanais, une porte vers l'espace | CNES",
+    "url": "https://cnes.fr/dossiers/centre-spatial-guyanais-une-porte-vers-lespace",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-hc3-mayotte-senat",
+    "organization": "Sénat",
+    "title": "Mayotte : un nouveau département confronté à de lourds défis - Sénat",
+    "url": "https://www.senat.fr/notice-rapport/2011/r11-675-notice.html",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-pv1-marseillaise",
+    "organization": "Élysée",
+    "title": "Paroles de \"La Marseillaise\"",
+    "url": "https://www.elysee.fr/front/pdf/sp-module-1608-fr.pdf",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-pv1-embauche",
+    "organization": "Service-public.gouv.fr",
+    "title": "Candidat à une offre d'emploi : méthodes de recrutement autorisées",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1684",
+    "checkedAt": "2026-10-13",
+    "updatedAt": "2026-02-20",
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-pv1-secu",
+    "organization": "Sécurité sociale",
+    "title": "Les grandes dates",
+    "url": "https://www.securite-sociale.fr/la-secu-cest-quoi/histoire/les-grandes-dates",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-pv1-association",
+    "organization": "Associations.gouv.fr",
+    "title": "La loi 1901 et la liberté d'association | Associations.gouv.fr",
+    "url": "https://www.associations.gouv.fr/loi-du-1er-juillet-1901-et-liberte-d-association.html",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-pv1-outrage",
+    "organization": "Légifrance",
+    "title": "Section 11 : De l'outrage au drapeau tricolore (Article R645-15)",
+    "url": "https://www.legifrance.gouv.fr/codes/id/LEGISCTA000022510546/2010-07-24",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-si1-democratie2",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La démocratie et la République (2/2)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-la-democratie-et-la-republique-2/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-si1-cc-candidat",
+    "organization": "Conseil constitutionnel",
+    "title": "Qui peut être candidat à l’élection présidentielle ?",
+    "url": "https://presidentielle2022.conseil-constitutionnel.fr/les-candidats/etre-candidat/etre-candidat-e-a-lelection-presidentielle.html",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-si2-mob",
+    "organization": "Direction générale des collectivités locales",
+    "title": "La mobilité",
+    "url": "https://www.collectivites-locales.gouv.fr/competences/la-mobilite",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-si2-fonc2",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Le fonctionnement européen (2/2)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/le-fonctionnement-europeen-2/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-si2-bce",
+    "organization": "Banque centrale européenne",
+    "title": "Organisation",
+    "url": "https://www.ecb.europa.eu/ecb/orga/html/index.fr.html",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-si2-citoyens",
+    "organization": "Parlement européen",
+    "title": "Les citoyens de l’Union et leurs droits",
+    "url": "https://www.europarl.europa.eu/factsheets/fr/sheet/145/les-citoyens-de-l-union-et-leurs-droits",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-vs1-logement",
+    "organization": "Service-Public.fr",
+    "title": "Utilisation du logement et travaux par le locataire",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1874",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-vs1-parking",
+    "organization": "Service-Public.fr",
+    "title": "Amende pour stationnement interdit (abusif, gênant, très gênant, dangereux)",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F34212",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-vs1-autorite",
+    "organization": "Service-Public.fr",
+    "title": "Exercice de l’autorité parentale",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F3132",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-vs2-allophones",
+    "organization": "Ministère de l’Intérieur",
+    "title": "L’école pour les enfants allophones",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-journ%C3%A9e/journ%C3%A9e-1/vivre-dans-la-soci%C3%A9t%C3%A9-fran%C3%A7aise/parentalit%C3%A9/l-ecole-pour-les-enfants-allophones/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-vs2-parents",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Droits et devoirs des parents à l’école",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-journ%C3%A9e/journ%C3%A9e-1/vivre-dans-la-soci%C3%A9t%C3%A9-fran%C3%A7aise/parentalit%C3%A9/droits-et-devoirs-des-parents-a-l-ecole/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-vs2-enfant",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Les droits de l’enfant",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-soci%C3%A9t%C3%A9-fran%C3%A7aise/parentalite/les-droits-de-l-enfant/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-vs2-grossesse",
+    "organization": "Direction de l’information légale et administrative",
+    "title": "Licenciement d’une salariée enceinte ou en congé de maternité",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2873",
+    "checkedAt": "2026-10-13",
+    "updatedAt": "2026-09-18",
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "nat-vs2-paternite",
+    "organization": "Direction de l’information légale et administrative",
+    "title": "Congé de paternité et d’accueil de l’enfant d’un salarié du secteur privé",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F3156",
+    "checkedAt": "2026-10-13",
+    "updatedAt": "2026-06-01",
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
   }
 ]

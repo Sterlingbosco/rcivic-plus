@@ -44,7 +44,7 @@ Le fonctionnement hors connexion est vérifié par des tests automatisés sur na
 
 **Profil CSP** : 178 des 191 énoncés officiels extraits sont publiés avec une réponse vérifiée sur une source institutionnelle (fiches de formation-civique.interieur.gouv.fr en priorité, puis Service Public, BnF, Légifrance, etc.). Les 13 autres attendent une source lisible ou un arbitrage éditorial. Toutes les réponses restent à relire par un humain (`humanReviewed: false`).
 
-**Profils CR et naturalisation** : la structure est en place et leurs listes officielles sont extraites (209 énoncés pour la CR, 244 pour la naturalisation), mais aucun énoncé n'est encore publié ; ces profils affichent « contenu en préparation » plutôt que de reprendre des questions d'un autre niveau.
+**Profil CR** : 170 des 209 énoncés de la liste officielle sont publiés. **Profil naturalisation** : 201 des 244 énoncés (liste PDF du ministère). Chaque profil a ses propres énoncés, 12 situations d'entraînement et son examen blanc ; les énoncés restants sont différés tant que leur réponse n'est pas vérifiable (voir `docs/QUESTIONS_A_COMPLETER_CR_NAT.md`).
 
 Détail et limites : [PROJECT_STATUS.md](PROJECT_STATUS.md) et [docs/SOURCES.md](docs/SOURCES.md).
 
