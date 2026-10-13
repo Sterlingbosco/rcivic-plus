@@ -528,5 +528,225 @@
     "updatedAt": null,
     "license": "Etalab 2.0, sauf contenus tiers signalés",
     "type": "institutional"
+  },
+  {
+    "id": "h1-empire",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Le 1er Empire (1804-1815)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/le-1er-empire-1804-1815/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "h1-regimes",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Les régimes politiques depuis 1789",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "h1-v",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La Vème République",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-cinquieme-republique/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "h1-iii",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La IIIème République (1870-1940)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-troisieme-republique-1870-1940/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "h1-ii",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La IIème République (1848-1851)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-deuxieme-republique-1848-1851/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "h1-shoah",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Focus sur la Seconde Guerre mondiale - la Shoah",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/focus-sur-la-seconde-guerre-mondiale-la-shoah/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "h1-ww2",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La Seconde Guerre mondiale (1939-1945) : le contexte",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-seconde-guerre-mondiale-1939-1945-le-contexte/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "h2-territoire",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Le territoire de la France",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/le-territoire-de-la-france/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "h2-frontieres",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Les frontières de la France",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-frontieres-de-la-france/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "h2-regions",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Les régions françaises",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "h3-baker",
+    "organization": "Ministère de la Culture",
+    "title": "Joséphine Baker, une femme libre fait son entrée au Panthéon",
+    "url": "https://www.culture.gouv.fr/actualites/Josephine-Baker-une-femme-libre-fait-son-entree-au-Pantheon",
+    "checkedAt": "2026-10-13",
+    "updatedAt": "2021-11-29",
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "h3-lafontaine",
+    "organization": "Académie française",
+    "title": "Jean de La Fontaine | Académie française",
+    "url": "https://www.academie-francaise.fr/les-immortels/jean-de-la-fontaine",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "v1-birth",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La déclaration de naissance",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-soci%C3%A9t%C3%A9-fran%C3%A7aise/demarches-administratives/la-declaration-de-naissance/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "v1-wedding",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La déclaration de mariage",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-soci%C3%A9t%C3%A9-fran%C3%A7aise/demarches-administratives/la-declaration-de-mariage/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "v1-undeclared",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Le droit du travail (5/5)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-soci%C3%A9t%C3%A9-fran%C3%A7aise/emploi/le-droit-au-travail-5/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "v1-orientation",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Orientation (1/5)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-soci%C3%A9t%C3%A9-fran%C3%A7aise/emploi/orientation-1/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "v1-business",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Types d’emploi (3/3)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-soci%C3%A9t%C3%A9-fran%C3%A7aise/emploi/types-emploi-3/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "v1-smic",
+    "organization": "Service Public — DILA",
+    "title": "Smic (salaire minimum interprofessionnel de croissance)",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2300",
+    "checkedAt": "2026-10-13",
+    "updatedAt": "2026-06-01",
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "v1-hours",
+    "organization": "Service Public — DILA",
+    "title": "Durée du travail d’un salarié du secteur privé à temps plein âgé d’au moins 18 ans",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1911",
+    "checkedAt": "2026-10-13",
+    "updatedAt": "2025-09-25",
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "v2-urgences",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Accès aux soins : services et numéros d’urgence",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-soci%C3%A9t%C3%A9-fran%C3%A7aise/sante/acces-aux-soins-services-et-numeros-d-urgence/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "v2-mutuelle",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La couverture complémentaire santé",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-soci%C3%A9t%C3%A9-fran%C3%A7aise/sante/la-prise-en-charge-les-differentes-couvertures-maladie/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "v2-instruction",
+    "organization": "Service-Public.fr",
+    "title": "Instruction obligatoire",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1898",
+    "checkedAt": "2026-10-13",
+    "updatedAt": "2025-11-06",
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
   }
 ]
