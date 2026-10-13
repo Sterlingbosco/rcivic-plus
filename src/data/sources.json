@@ -478,5 +478,55 @@
     "updatedAt": "2025-10-20",
     "license": "Référence factuelle ; aucun visuel repris",
     "type": "institutional"
+  },
+  {
+    "id": "ddhc",
+    "organization": "Présidence de la République",
+    "title": "La déclaration des droits de l’homme et du citoyen",
+    "url": "https://www.elysee.fr/la-presidence/la-declaration-des-droits-de-l-homme-et-du-citoyen",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "constitution-text",
+    "organization": "Conseil constitutionnel",
+    "title": "Texte intégral de la Constitution du 4 octobre 1958 en vigueur",
+    "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "secularism-history",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Histoire de la laïcité",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/histoire-de-la-laicite/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "secularism-school",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La laïcité à l’école (1/2)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-laicite-a-ecole-1/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "secularism-charter",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La laïcité à l’école (2/2)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-laicite-a-ecole-2/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
   }
 ]

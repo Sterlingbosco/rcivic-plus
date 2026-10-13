@@ -7,7 +7,7 @@ import { createProgress } from '../src/domain/progress';
 it('valide tout le corpus, les IDs et les liens vers les sources', () => {
   expect(() => validateCorpus(questions, sources)).not.toThrow();
   expect(themes).toHaveLength(5);
-  expect(questions.filter((q) => q.type === 'QUESTION_OFFICIELLE')).toHaveLength(109);
+  expect(questions.filter((q) => q.type === 'QUESTION_OFFICIELLE')).toHaveLength(122);
   expect(questions.filter((q) => q.type === 'EXERCICE_ENTRAINEMENT')).toHaveLength(12);
   expect(new Set(questions.map((q) => q.id)).size).toBe(questions.length);
   for (const theme of ['principes_valeurs', 'histoire_culture', 'vie_societe']) {
@@ -20,7 +20,7 @@ it('valide tout le corpus, les IDs et les liens vers les sources', () => {
   ).toHaveLength(29);
   expect(
     questions.filter((q) => q.type === 'QUESTION_OFFICIELLE' && q.theme === 'principes_valeurs'),
-  ).toHaveLength(24);
+  ).toHaveLength(37);
   expect(
     questions.filter((q) => q.type === 'QUESTION_OFFICIELLE' && q.theme === 'institutions'),
   ).toHaveLength(46);
