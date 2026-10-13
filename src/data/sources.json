@@ -308,5 +308,125 @@
     "updatedAt": null,
     "license": "Référence factuelle ; aucun visuel repris",
     "type": "institutional"
+  },
+  {
+    "id": "state-of-law",
+    "organization": "Ministère de l’Intérieur",
+    "title": "État de droit et séparation des pouvoirs : présentation de l’État de droit",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs--presentation-de-letat-de-droit-et-principe-de-la-separation-des-pouvoirs/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "democracy",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La démocratie et la République (1/2)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-la-democratie-et-la-republique-1/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "voting-conditions",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Les conditions pour voter en France (1/2)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "elections",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Les conditions pour voter en France (2/2)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-2/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "political-parties",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Le principe de pluralité des partis",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-le-principe-de-pluralite-des-partis/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "law-process",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Comment voter une loi (1/2)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/comment-voter-une-loi-1/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "territorial",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Le découpage administratif de la France (1/3)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-1/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "prefect",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Le découpage administratif de la France (2/3)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-2/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "europe-construction",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Les étapes clés de la construction européenne",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-etapes-cles-de-la-construction-europeenne/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "europe-symbols",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Les symboles européens (2/2)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-symboles-europeens-2/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "europe-elections",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Les élections européennes",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-elections-europeennes/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "europe-functioning",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Le fonctionnement européen (1/2)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/le-fonctionnement-europeen-1/",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
   }
 ]

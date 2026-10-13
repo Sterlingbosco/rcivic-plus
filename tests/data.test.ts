@@ -7,10 +7,10 @@ import { createProgress } from '../src/domain/progress';
 it('valide tout le corpus, les IDs et les liens vers les sources', () => {
   expect(() => validateCorpus(questions, sources)).not.toThrow();
   expect(themes).toHaveLength(5);
-  expect(questions.filter((q) => q.type === 'QUESTION_OFFICIELLE')).toHaveLength(53);
+  expect(questions.filter((q) => q.type === 'QUESTION_OFFICIELLE')).toHaveLength(93);
   expect(questions.filter((q) => q.type === 'EXERCICE_ENTRAINEMENT')).toHaveLength(12);
   expect(new Set(questions.map((q) => q.id)).size).toBe(questions.length);
-  for (const theme of ['principes_valeurs', 'institutions', 'histoire_culture', 'vie_societe']) {
+  for (const theme of ['principes_valeurs', 'histoire_culture', 'vie_societe']) {
     expect(
       questions.filter((q) => q.type === 'QUESTION_OFFICIELLE' && q.theme === theme).length,
     ).toBeGreaterThan(0);
@@ -18,6 +18,9 @@ it('valide tout le corpus, les IDs et les liens vers les sources', () => {
   expect(
     questions.filter((q) => q.type === 'QUESTION_OFFICIELLE' && q.theme === 'droits_devoirs'),
   ).toHaveLength(29);
+  expect(
+    questions.filter((q) => q.type === 'QUESTION_OFFICIELLE' && q.theme === 'institutions'),
+  ).toHaveLength(46);
   expect(questions.filter((q) => q.id === 'CSP-DD-002')).toHaveLength(0);
 });
 
