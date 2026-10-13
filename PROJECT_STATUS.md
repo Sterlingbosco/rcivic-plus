@@ -1,6 +1,6 @@
 # État produit RCIVIC+
 
-Validation de RCIVIC+ 0.3.0 : 13 octobre 2026 (lot introductif initial en 0.2.0 le 11 octobre). Les cases ci-dessous portent sur cette première tranche exploitable, pas sur l’achèvement du cahier des charges complet.
+Validation de RCIVIC+ 0.3.1 : 13 octobre 2026 (lot introductif initial en 0.2.0 le 11 octobre). Les cases ci-dessous portent sur cette première tranche exploitable, pas sur l’achèvement du cahier des charges complet.
 
 - [x] environnement — Node 20.11 / npm 10.2 / Git audités ; références intégralement lues ; installation reproductible `npm ci` vérifiée
 - [x] architecture — React / TypeScript strict / Vite ; séparation données, moteurs, plateforme et UI

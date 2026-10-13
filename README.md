@@ -17,9 +17,17 @@ Application web de **préparation pédagogique à l'examen civique** français (
 
 ## Installer sur un téléphone
 
-RCIVIC+ est une application web installable (PWA) : il n'y a pas de fichier APK ni de publication sur un magasin d'applications.
+RCIVIC+ est une application web installable (PWA). Pour Android, un APK est aussi joint à chaque release ; il n'y a pas de publication sur un magasin d'applications.
 
-**Android (Chrome)**
+**Android : APK (contenu embarqué, hors connexion dès l'installation)**
+
+1. Télécharger `rcivic-plus-<version>-debug.apk` depuis la [dernière release](https://github.com/Sterlingbosco/rcivic-plus/releases/latest).
+2. L'ouvrir sur le téléphone et autoriser l'installation depuis cette source si Android le demande.
+3. Lancer RCIVIC+ : tout le contenu est dans l'application, sans connexion nécessaire.
+
+L'APK est signé avec une clé de **debug** (adaptée à une installation directe, pas à un magasin d'applications) ; les mises à jour passent par un nouvel APK. Sa progression est **séparée** de celle de la version web : exportez puis refaites vos réglages plutôt que d'attendre une synchronisation. Il est construit par GitHub Actions (`.github/workflows/android.yml`) et n'a pas encore été testé sur un téléphone réel.
+
+**Android (Chrome, sans APK)**
 
 1. Ouvrir <https://sterlingbosco.github.io/rcivic-plus/> dans Chrome, **avec une connexion**.
 2. Menu ⋮ → **Installer l'application** (ou **Ajouter à l'écran d'accueil**), puis confirmer.
