@@ -53,9 +53,9 @@ export function Exam() {
                 <br />
                 Les {EXAM_RULES.situations} situations sont des exercices originaux, pas les
                 situations officielles non publiées. Ce lot contient {officialQuestions.length}{' '}
-                connaissances et {situations.length} situations : refaire un examen reprend les
-                mêmes notions avec un ordre et des choix mélangés. Un score élevé ne prouve pas la
-                maîtrise des {officialCorpusTotal} connaissances du corpus CSP.
+                connaissances vérifiées : chaque examen en tire {EXAM_RULES.knowledge}, avec un
+                ordre et des choix mélangés. Un score élevé ne prouve pas la maîtrise des{' '}
+                {officialCorpusTotal} connaissances du corpus CSP.
               </p>
             </div>
             <button

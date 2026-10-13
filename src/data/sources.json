@@ -158,5 +158,155 @@
     "updatedAt": null,
     "license": "Etalab 2.0, sauf contenus tiers signalés",
     "type": "institutional"
+  },
+  {
+    "id": "constitution",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La Constitution de la Vème République",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-constitution-de-la-5-republique/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "rights-intro",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Introduction aux droits fondamentaux",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/introduction-aux-droits-fondamentaux/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "person-rights",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Les droits liés à la personne humaine",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-droits-inherents-a-la-personne-humaine/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "body-rights",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Un droit fondamental : le droit de disposer de son corps",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/un-droit-fondamental-le-droit-de-disposer-de-son-corps/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "couple",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Les libertés au sein du couple",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-libertes-au-sein-du-couple/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "citizenship",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La citoyenneté",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/un-droit-fondamental-la-citoyennete/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "freedom-limits",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La limite des libertés individuelles",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/la-limite-des-libertes-individuelles/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "offenses",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Se conformer aux lois : les infractions (1/2)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/se-conformer-aux-lois-les-infractions/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "law-actors",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Se conformer aux lois - les acteurs (2/2)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/se-conformer-aux-lois-les-acteurs/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "resident-duties",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Les obligations en tant que résident français",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/les-obligations-en-tant-que-resident-francais/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "victims",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La protection des victimes de violences",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/la-protection-des-victimes-de-violences/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "trafficking",
+    "organization": "Ministère de l’Intérieur",
+    "title": "La traite des êtres humains et la prostitution",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/la-traite-des-etres-humains-et-la-prostitution/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "environment",
+    "organization": "Ministère de l’Intérieur",
+    "title": "Adopter une attitude respectueuse vis-à-vis de l’environnement",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/obligations-et-devoirs-des-personnes-residants-en-france-adopter-une-attitude-respectueuse-vis-a-vis-de-environnement/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Etalab 2.0, sauf contenus tiers signalés",
+    "type": "institutional"
+  },
+  {
+    "id": "death-penalty",
+    "organization": "Assemblée nationale",
+    "title": "Peine de mort",
+    "url": "https://www.assemblee-nationale.fr/histoire/peinedemort/",
+    "checkedAt": "2026-10-11",
+    "updatedAt": "2010-02-01",
+    "license": "Contenu historique de l’Assemblée nationale ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "marriage",
+    "organization": "Service Public — DILA",
+    "title": "Mariage en France : vous êtes déjà marié",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F36504/2",
+    "checkedAt": "2026-10-11",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
   }
 ]

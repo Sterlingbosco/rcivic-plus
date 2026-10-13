@@ -7,8 +7,18 @@ import { createProgress } from '../src/domain/progress';
 it('valide tout le corpus, les IDs et les liens vers les sources', () => {
   expect(() => validateCorpus(questions, sources)).not.toThrow();
   expect(themes).toHaveLength(5);
-  expect(questions.filter((q) => q.type === 'QUESTION_OFFICIELLE')).toHaveLength(28);
+  expect(questions.filter((q) => q.type === 'QUESTION_OFFICIELLE')).toHaveLength(53);
   expect(questions.filter((q) => q.type === 'EXERCICE_ENTRAINEMENT')).toHaveLength(12);
+  expect(new Set(questions.map((q) => q.id)).size).toBe(questions.length);
+  for (const theme of ['principes_valeurs', 'institutions', 'histoire_culture', 'vie_societe']) {
+    expect(
+      questions.filter((q) => q.type === 'QUESTION_OFFICIELLE' && q.theme === theme).length,
+    ).toBeGreaterThan(0);
+  }
+  expect(
+    questions.filter((q) => q.type === 'QUESTION_OFFICIELLE' && q.theme === 'droits_devoirs'),
+  ).toHaveLength(29);
+  expect(questions.filter((q) => q.id === 'CSP-DD-002')).toHaveLength(0);
 });
 
 it('préserve les 191 énoncés officiels et les 189 réponses client', () => {
