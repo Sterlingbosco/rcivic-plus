@@ -988,5 +988,35 @@
     "updatedAt": null,
     "license": "Référence factuelle ; aucun visuel repris",
     "type": "institutional"
+  },
+  {
+    "id": "n1-paris",
+    "organization": "Ville de Paris",
+    "title": "L'action internationale de la Ville de Paris, c'est quoi ?",
+    "url": "https://www.paris.fr/pages/paris-a-l-international-2433",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "n1-piaf",
+    "organization": "Bibliothèque nationale de France",
+    "title": "Notice de personne \"Piaf, Édith (1915-1963)\"",
+    "url": "https://catalogue.bnf.fr/ark:/12148/cb13898453f",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
+  },
+  {
+    "id": "n1-dalida",
+    "organization": "Bibliothèque nationale de France",
+    "title": "Notice de personne \"Dalida (1933-1987)\"",
+    "url": "https://catalogue.bnf.fr/ark:/12148/cb12042187x",
+    "checkedAt": "2026-10-13",
+    "updatedAt": null,
+    "license": "Référence factuelle ; aucun visuel repris",
+    "type": "institutional"
   }
 ]
